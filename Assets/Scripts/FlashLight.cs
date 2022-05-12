@@ -6,63 +6,95 @@ public class FlashLight : MonoBehaviour
 {
     [Header("Flashlight Settings")]
     [SerializeField] float intensityLight;
-    [SerializeField] float turnedUnLight;
-    [SerializeField] int turnUnFlickerLight;
-    [SerializeField] bool IsFlickering;
+    [SerializeField] float lightTime;
+    [SerializeField] float firstFlicker;
+    [SerializeField] float maxLightTime;
 
+    [Header("Flicker Settings")]
+    [SerializeField] int intensityRandom1;
+    [SerializeField] int intensityRandom2;
+    [SerializeField] float delayRandom1;
+    [SerializeField] float delayRandom2;
+   
     [Header("References")]
-    [SerializeField] Light lightSource;
+    [SerializeField] Light headLight;
+    [SerializeField] GameObject monster;
+    [SerializeField] Transform flashLight;
 
-    float test = 0;
+    float delay;
+    bool canTurnOn = true;
+    Vector3 spawnPointMonster;
+    float zPosMonster;
 
     private void Start()
     {
-        lightSource.intensity = intensityLight;
+        headLight.intensity = intensityLight;
     }
+
 
     void Update()
     {
         TurnOn_OffLight();
         LightTimer();
+        SpawnMonster();
     }
-
 
     void TurnOn_OffLight()
     {
         if (Input.GetKeyUp(KeyCode.G))
         {
-            lightSource.enabled = !lightSource.enabled;
+            headLight.enabled = !headLight.enabled;
         }
     }
 
     void LightTimer()
     {
-        if (lightSource.enabled == true)
+        if (headLight.enabled == true)
         {
-            turnedUnLight += Time.deltaTime;
+            lightTime += Time.deltaTime;
         }
-        else if (!lightSource.enabled && turnedUnLight > 0)
+        else if (!headLight.enabled)
         {
-            turnedUnLight -= Time.deltaTime;
+            lightTime -= Time.deltaTime;
+
         }
         
-        if (turnedUnLight < 0)
+        if (lightTime < 0)
         {
-            turnedUnLight = 0;
+            lightTime = 0;
         }
-        else if(turnedUnLight > 6)
+
+        if (lightTime >= firstFlicker)
         {
-            StartCoroutine(LightFlickerEffect());
+            if (canTurnOn)
+            {
+                StartCoroutine(LightFlicker());
+            }
+            
         }
+
     }
 
-    IEnumerator LightFlickerEffect()
+    IEnumerator LightFlicker()
     {
-        IsFlickering = true;
-        lightSource.enabled = false;
-        yield return new WaitForSeconds(1f);
-        lightSource.enabled = true;
-        IsFlickering = false;
+        canTurnOn = false;
+        headLight.intensity = Random.Range(intensityRandom1,intensityRandom2);
+        delay = Random.Range(delayRandom1, delayRandom2);
+        yield return new WaitForSeconds(delay);
+        headLight.intensity = intensityLight;
+        canTurnOn = true;
+    }
+
+    void SpawnMonster()
+    {
+        zPosMonster = flashLight.position.z - 2f;
+        spawnPointMonster = new Vector3(0, 1, zPosMonster);
+        if (lightTime >= maxLightTime)
+        {
+            lightTime = 0;
+            headLight.enabled = false;
+            Instantiate(monster, spawnPointMonster, Quaternion.identity);
+        }
     }
 
 }
