@@ -7,12 +7,11 @@
 ### Echter kom je er achter dat er een verschikkelijk iets is gebeurt.
 ### Nu is het aan jouw de taak om met de hulp van een paar kleine puzzels weg te komen voordat het te laat is.
 
-## werkend aan het project
-### Game developers
+## Game developers
 ### Mike Huijgen
 ### Jason Siegersma
 
-### Game artist
+## Game artist
 ### Jeronne Warnaar
 ###
 ###
