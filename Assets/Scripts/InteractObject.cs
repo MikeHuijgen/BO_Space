@@ -18,6 +18,7 @@ public class InteractObject : MonoBehaviour
     [SerializeField] bool putBackObject = false;
 
     [SerializeField] Vector3 oldPos;
+    [SerializeField] Quaternion oldRot;
 
     float mouseX;
     float mouseY;
@@ -25,6 +26,7 @@ public class InteractObject : MonoBehaviour
     private void Start()
     {
         oldPos = transform.position;
+        oldRot = transform.rotation;
     }
 
     private void Update()
@@ -65,17 +67,19 @@ public class InteractObject : MonoBehaviour
     }
 
     public void PlaceObjectBack(bool value)
-    {
-        if (value)
-        {
-            putBackObject = true;
-        }    
+    {   
+        putBackObject = value;
 
-        if (putBackObject)
+        if (putBackObject == true)
         {
             inspectObjectTransform.transform.DetachChildren();
             transform.position = oldPos;
+            transform.rotation = oldRot;
             player.GetComponent<walk>().enabled = true;
+            player.GetComponent<Interact>().CheckSeeInteractText(true);
+            putBackObject = false;
+            onRightSpot = false;
+            pickedUp = false;
         }
     }
 }
