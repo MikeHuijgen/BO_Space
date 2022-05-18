@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
+    float moveX;
+    float moveZ;
 
-    public CharacterController controller;
-
-    public float speed = 12f;
+    public float speed = 5f;
    
 
     // Update is called once per frame
@@ -18,9 +19,16 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         
+        transform.Translate(Vector3.right * x * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * z * speed * Time.deltaTime);
 
-        controller.Move(move * speed * Time.deltaTime);
-
-
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = 10f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 5f;
+        }
     }
 }
