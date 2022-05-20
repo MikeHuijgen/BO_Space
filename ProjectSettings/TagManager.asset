@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - InteractText
+  - Door
+  - Terminal
+  - Terminal1
+  - DoorTrigger
   layers:
   - Default
   - TransparentFX

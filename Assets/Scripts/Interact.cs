@@ -18,7 +18,16 @@ public class Interact : MonoBehaviour
 
     bool pickedUp;
     InteractObject interactObject;
+    GameObject door;
+    DoorScript doorScript;
+    
     [SerializeField] bool showText = true;
+
+    private void Start()
+    {
+        door = GameObject.FindWithTag("Door");
+        doorScript = door.GetComponent<DoorScript>();
+    }
 
     private void Update()
     {
@@ -63,7 +72,8 @@ public class Interact : MonoBehaviour
 
     void InteractWithButton()
     {
-        Debug.Log("You pressed the button");
+        Terminal terminal = hitInfo.transform.GetComponent<Terminal>();
+        terminal.Active(true);
     }
 
     void InteractWithObject()
