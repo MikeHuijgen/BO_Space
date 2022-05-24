@@ -6,15 +6,16 @@ public class Terminal : MonoBehaviour
 {
     [SerializeField] public bool active;
     [SerializeField] GameObject door;
-    DoorScript doorScript;
+    [SerializeField] GameObject terminal;
     public void Active(bool value)
     {
         active = value;
+        terminal.layer = 2;
     }
 
     private void Start()
     {
-        doorScript = door.GetComponent<DoorScript>();
+        terminal = this.gameObject;
     }
 
     public void SetFalse(bool value)
@@ -22,6 +23,7 @@ public class Terminal : MonoBehaviour
         if (value == true)
         {
             active = false;
+            
         }
     }
 }
