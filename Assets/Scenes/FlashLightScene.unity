@@ -434,6 +434,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -20.771, y: -159.895, z: -163.537}
+--- !u!1 &1475690983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5542040244117594444, guid: 0830088d6b9973647b09d59641208e80, type: 3}
+  m_PrefabInstance: {fileID: 5542040244204795049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1758089241
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858370359}
   - component: {fileID: 1858370358}
+  - component: {fileID: 1858370360}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -574,6 +580,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1858370360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858370357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d2f49b95931d647b6092148e97db7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashLight: {fileID: 1475690983}
+  sanityTimer: 0
+  maxSanityTime: 3
 --- !u!1 &2030205624
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +698,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 331410756}
     m_Modifications:
+    - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
+      propertyPath: intensityLight
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
+      propertyPath: intensityRandom1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
+      propertyPath: intensityRandom2
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5542040244117594444, guid: 0830088d6b9973647b09d59641208e80, type: 3}
       propertyPath: m_Name
       value: FlashLight

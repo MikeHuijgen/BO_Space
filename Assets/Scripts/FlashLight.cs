@@ -26,6 +26,7 @@ public class FlashLight : MonoBehaviour
     bool canTurnOn = true;
     Vector3 spawnPointMonster;
     float zPosMonster;
+    public bool lightTurnedUn;
 
     private void Start()
     {
@@ -53,11 +54,12 @@ public class FlashLight : MonoBehaviour
         if (headLight.enabled == true)
         {
             lightTime += Time.deltaTime;
+            lightTurnedUn = true;
         }
         else if (!headLight.enabled)
         {
             lightTime -= Time.deltaTime;
-
+            lightTurnedUn = false;
         }
         
         if (lightTime < 0)
@@ -75,6 +77,8 @@ public class FlashLight : MonoBehaviour
         }
 
     }
+
+
 
     IEnumerator LightFlicker()
     {
