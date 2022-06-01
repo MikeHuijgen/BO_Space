@@ -20,11 +20,13 @@ public class FlashLight : MonoBehaviour
     [SerializeField] Light headLight;
     [SerializeField] GameObject monster;
     [SerializeField] Transform flashLight;
+    [SerializeField] Transform monsterSpawn;
 
     float delay;
     bool canTurnOn = true;
     Vector3 spawnPointMonster;
     float zPosMonster;
+    public bool lightTurnedUn;
 
     private void Start()
     {
@@ -52,11 +54,12 @@ public class FlashLight : MonoBehaviour
         if (headLight.enabled == true)
         {
             lightTime += Time.deltaTime;
+            lightTurnedUn = true;
         }
         else if (!headLight.enabled)
         {
             lightTime -= Time.deltaTime;
-
+            lightTurnedUn = false;
         }
         
         if (lightTime < 0)
@@ -75,6 +78,8 @@ public class FlashLight : MonoBehaviour
 
     }
 
+
+
     IEnumerator LightFlicker()
     {
         canTurnOn = false;
@@ -86,14 +91,12 @@ public class FlashLight : MonoBehaviour
     }
 
     void SpawnMonster()
-    {
-        zPosMonster = flashLight.position.z - 2f;
-        spawnPointMonster = new Vector3(0, 1, zPosMonster);
+    { 
         if (lightTime >= maxLightTime)
         {
             lightTime = 0;
             headLight.enabled = false;
-            Instantiate(monster, spawnPointMonster, Quaternion.identity);
+            Instantiate(monster, monsterSpawn.position, Quaternion.identity);
         }
     }
 
