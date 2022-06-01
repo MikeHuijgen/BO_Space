@@ -8,6 +8,7 @@ public class DoorScript : MonoBehaviour
     [SerializeField] int closeDoorTime;
     [SerializeField] float speed;
     [SerializeField] Vector3 oldDoorPos;
+    [SerializeField] Vector3 maxHeightPos;
     [SerializeField] int openHeight;
     
     [Header("Bool Settings")]
@@ -21,6 +22,7 @@ public class DoorScript : MonoBehaviour
     [SerializeField] Collider doorTrigger;
     [SerializeField] GameObject terminal1;
     [SerializeField] GameObject terminal2;
+    [SerializeField] Transform maxHeightTransform;
 
     Terminal terminalScript1;
     Terminal terminalScript2;
@@ -36,6 +38,8 @@ public class DoorScript : MonoBehaviour
         terminalScript1 = terminal1.transform.GetComponent<Terminal>();
         terminalScript2 = terminal2.transform.GetComponent<Terminal>();
         doorTrigger.enabled = false;
+
+        maxHeightPos = maxHeightTransform.position;
     }
 
     private void Update()
@@ -70,7 +74,7 @@ public class DoorScript : MonoBehaviour
             door.transform.Translate(0,.1f * speed * Time.deltaTime,0);
         }
 
-        if (doorY > openHeight)
+        if (doorY > maxHeightTransform.position.y)
         {
             isOpening = false;
             door.transform.Translate(0,0,0);
