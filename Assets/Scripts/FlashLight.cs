@@ -22,7 +22,9 @@ public class FlashLight : MonoBehaviour
     [SerializeField] Transform flashLight;
     [SerializeField] Transform monsterSpawn;
 
-    bool nightTime = false;
+    [Header("Sound")]
+    [SerializeField] AudioClip turnOnAndOf;
+
     float delay;
     bool canTurnOn = true;
     Vector3 spawnPointMonster;
