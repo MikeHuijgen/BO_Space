@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &243001826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243001827}
+  m_Layer: 0
+  m_Name: DoorHeight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &243001827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243001826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1848476656268141696}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1848476656132499830
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 1848476656132499830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.88, y: 0.84, z: 0}
-  m_LocalScale: {x: 2.6174114, y: 2.29, z: 1.3668889}
+  m_LocalScale: {x: 3.0885453, y: 2.7022, z: 1.6129287}
   m_Children:
   - {fileID: 1848476656375767171}
   - {fileID: 1848476656233248487}
@@ -223,6 +253,7 @@ Transform:
   - {fileID: 1848476656967634280}
   - {fileID: 1848476656937274503}
   - {fileID: 1848476657134486135}
+  - {fileID: 243001827}
   m_Father: {fileID: 1848476656132499826}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -364,7 +395,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 4}
+  m_Size: {x: 2, y: 2, z: 5.87}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1848476656772853053
 MonoBehaviour:
@@ -602,7 +633,8 @@ MonoBehaviour:
   closeDoorTime: 1
   speed: 20
   oldDoorPos: {x: 0, y: 0, z: 0}
-  openHeight: 5
+  maxHeightPos: {x: 0, y: 0, z: 0}
+  openHeight: 12
   isOpening: 0
   activeTerminal1: 0
   activeTerminal2: 0
@@ -611,6 +643,7 @@ MonoBehaviour:
   doorTrigger: {fileID: 1848476656772853050}
   terminal1: {fileID: 1848476656937274507}
   terminal2: {fileID: 1848476657134486138}
+  maxHeightTransform: {fileID: 243001827}
 --- !u!1 &1848476657134486138
 GameObject:
   m_ObjectHideFlags: 0
