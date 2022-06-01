@@ -7,7 +7,7 @@ public class FlashLight : MonoBehaviour
     [Header("Flashlight Settings")]
     [SerializeField] float intensityLight;
     [SerializeField] float lightTime;
-    [SerializeField] float firstFlicker;
+    [SerializeField] float flickeringTime;
     [SerializeField] float maxLightTime;
 
     [Header("Flicker Settings")]
@@ -67,7 +67,7 @@ public class FlashLight : MonoBehaviour
             lightTime = 0;
         }
 
-        if (lightTime >= firstFlicker)
+        if (lightTime >= flickeringTime)
         {
             if (canTurnOn)
             {
