@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8784953399786639941}
   - component: {fileID: 7721327695229744355}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: FakeMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

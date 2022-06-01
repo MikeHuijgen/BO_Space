@@ -46,6 +46,8 @@ public class Interact : MonoBehaviour
 
             interactText.text = $"Press E to press the button";
 
+            Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1f);
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 InteractWithButton();
@@ -57,10 +59,11 @@ public class Interact : MonoBehaviour
 
             interactText.text = $"Press E to pick up the object";
 
-            objectPickUp = hitInfo.transform.parent.transform;
+            Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1f);
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                objectPickUp = hitInfo.transform.parent.transform;
                 InteractWithObject();
             }
         }

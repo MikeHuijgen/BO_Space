@@ -8,6 +8,7 @@ public class DoorScript : MonoBehaviour
     [SerializeField] int closeDoorTime;
     [SerializeField] float speed;
     [SerializeField] Vector3 oldDoorPos;
+    [SerializeField] int openHeight;
     
     [Header("Bool Settings")]
     [SerializeField] public bool isOpening = false;
@@ -69,7 +70,7 @@ public class DoorScript : MonoBehaviour
             door.transform.Translate(0,.1f * speed * Time.deltaTime,0);
         }
 
-        if (doorY > 3)
+        if (doorY > openHeight)
         {
             isOpening = false;
             door.transform.Translate(0,0,0);

@@ -21,7 +21,9 @@ public class FlashLight : MonoBehaviour
     [SerializeField] GameObject monster;
     [SerializeField] Transform flashLight;
     [SerializeField] Transform monsterSpawn;
+    [SerializeField] Transform dirLight;
 
+    bool nightTime = false;
     float delay;
     bool canTurnOn = true;
     Vector3 spawnPointMonster;
@@ -39,6 +41,7 @@ public class FlashLight : MonoBehaviour
         TurnOn_OffLight();
         LightTimer();
         SpawnMonster();
+        MakeItNight();
     }
 
     void TurnOn_OffLight()
@@ -98,6 +101,16 @@ public class FlashLight : MonoBehaviour
             headLight.enabled = false;
             Instantiate(monster, monsterSpawn.position, Quaternion.identity);
         }
+    }
+
+    void MakeItNight()
+    {
+        if (Input.GetKeyDown(KeyCode.N) && nightTime == false)
+        {
+            dirLight.rotation = Quaternion.Euler(200, 0, 0);
+            nightTime = true;
+        }
+
     }
 
 }

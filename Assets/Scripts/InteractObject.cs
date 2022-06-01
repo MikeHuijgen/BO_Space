@@ -10,6 +10,7 @@ public class InteractObject : MonoBehaviour
 
     [Header("References")]
     [SerializeField] GameObject player;
+    [SerializeField] GameObject playerCam;
     [SerializeField] GameObject inspectObjectTransform;
     [SerializeField] TMP_Text interactText;
 
@@ -44,7 +45,8 @@ public class InteractObject : MonoBehaviour
     {
         if (pickedUp)
         {
-            player.GetComponent<walk>().enabled = false;
+            player.GetComponent<PlayerMovement>().enabled = false;
+            playerCam.GetComponent<MouseLook>().enabled = false;
             player.GetComponent<Interact>().CheckSeeInteractText(false);
             interactText.enabled = false;
 
@@ -75,7 +77,8 @@ public class InteractObject : MonoBehaviour
             inspectObjectTransform.transform.DetachChildren();
             transform.position = oldPos;
             transform.rotation = oldRot;
-            player.GetComponent<walk>().enabled = true;
+            playerCam.GetComponent<MouseLook>().enabled = true;
+            player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<Interact>().CheckSeeInteractText(true);
             putBackObject = false;
             onRightSpot = false;
