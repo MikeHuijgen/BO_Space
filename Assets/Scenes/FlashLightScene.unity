@@ -707,6 +707,14 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
+      propertyPath: flickeringTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
+      propertyPath: intensityRandom1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
       propertyPath: intensityRandom2
       value: 13
       objectReference: {fileID: 0}
