@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-    [SerializeField] GameObject door;
-
-    private void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject door;
 
     private void OnTriggerEnter(Collider other)
     {

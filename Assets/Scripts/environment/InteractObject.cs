@@ -6,23 +6,23 @@ using TMPro;
 public class InteractObject : MonoBehaviour
 {
     [Header("InteractObject Settings")]
-    [SerializeField] float rotateSpeed;
+    [SerializeField] private float rotateSpeed;
 
     [Header("References")]
-    [SerializeField] GameObject player;
-    [SerializeField] GameObject playerCam;
-    [SerializeField] GameObject inspectObjectTransform;
-    [SerializeField] TMP_Text interactText;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerCam;
+    [SerializeField] private GameObject inspectObjectTransform;
+    [SerializeField] private TMP_Text interactText;
 
-    [SerializeField] bool pickedUp = false;
-    [SerializeField] bool onRightSpot = false;
-    [SerializeField] bool putBackObject = false;
+    [SerializeField] private bool pickedUp = false;
+    [SerializeField] private bool onRightSpot = false;
+    [SerializeField] private bool putBackObject = false;
 
-    [SerializeField] Vector3 oldPos;
-    [SerializeField] Quaternion oldRot;
+    [SerializeField] private Vector3 oldPos;
+    [SerializeField] private Quaternion oldRot;
 
-    float mouseX;
-    float mouseY;
+    private float mouseX;
+    private float mouseY;
 
     private void Start()
     {

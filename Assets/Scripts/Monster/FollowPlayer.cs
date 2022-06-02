@@ -6,13 +6,13 @@ using UnityEngine.AI;
 public class FollowPlayer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Transform player;
-    [SerializeField] GameObject flashLight;
+    [SerializeField] private Transform player;
+    [SerializeField] private GameObject flashLight;
 
-    bool lightIsOn;
-    Vector3 startPos;
+    private bool lightIsOn;
+    private Vector3 startPos;
 
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
 
     private void Start()
     {

@@ -5,18 +5,18 @@ using UnityEngine;
 public class Terminal : MonoBehaviour
 {
     [SerializeField] public bool active;
-    [SerializeField] GameObject door;
-    [SerializeField] GameObject terminal;
+    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject terminal;
+    private void Start()
+    {
+        terminal = this.gameObject;
+    }
     public void Active(bool value)
     {
         active = value;
         terminal.layer = 2;
     }
 
-    private void Start()
-    {
-        terminal = this.gameObject;
-    }
 
     public void SetFalse(bool value)
     {

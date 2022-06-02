@@ -6,20 +6,20 @@ using TMPro;
 public class Interact : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Transform cameraT;
-    [SerializeField] TMP_Text interactText;
-    [SerializeField] Transform objectPickUp;
+    [SerializeField] private Transform cameraT;
+    [SerializeField] private TMP_Text interactText;
+    [SerializeField] private Transform objectPickUp;
 
     [Header("LayerMasks")]
-    [SerializeField] LayerMask Ibutton;
-    [SerializeField] LayerMask Iobject;
-    Ray ray;
-    RaycastHit hitInfo;
+    [SerializeField] private LayerMask Ibutton;
+    [SerializeField] private LayerMask Iobject;
+    private Ray ray;
+    private RaycastHit hitInfo;
 
-    bool pickedUp;
-    InteractObject interactObject;
-    GameObject door;
-    DoorScript doorScript;
+    private bool pickedUp;
+    private InteractObject interactObject;
+    private GameObject door;
+    private DoorScript doorScript;
     
     [SerializeField] bool showText = true;
 

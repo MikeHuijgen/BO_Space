@@ -5,32 +5,34 @@ using UnityEngine;
 public class FlashLight : MonoBehaviour
 {
     [Header("Flashlight Settings")]
-    [SerializeField] float intensityLight;
-    [SerializeField] float lightTime;
-    [SerializeField] float flickeringTime;
-    [SerializeField] float maxLightTime;
+    [SerializeField] private float intensityLight;
+    [SerializeField] private float lightTime;
+    [SerializeField] private float flickeringTime;
+    [SerializeField] private float maxLightTime;
+    
 
     [Header("Flicker Settings")]
-    [SerializeField] int intensityRandom1;
-    [SerializeField] int intensityRandom2;
-    [SerializeField] float delayRandom1;
-    [SerializeField] float delayRandom2;
+    [SerializeField] private int intensityRandom1;
+    [SerializeField] private int intensityRandom2;
+    [SerializeField] private float delayRandom1;
+    [SerializeField] private float delayRandom2;
    
     [Header("References")]
-    [SerializeField] Light headLight;
-    [SerializeField] GameObject monster;
-    [SerializeField] Transform flashLight;
-    [SerializeField] Transform monsterSpawn;
+    [SerializeField] private Light headLight;
+    [SerializeField] private GameObject monster;
+    [SerializeField] private Transform flashLight;
+    [SerializeField] private Transform monsterSpawn;
 
     [Header("Sound")]
-    [SerializeField] AudioClip turnOnSound;
+    [SerializeField] private AudioClip turnOnSound;
 
-    float delay;
-    bool canTurnOn = true;
-    Vector3 spawnPointMonster;
-    float zPosMonster;
+    private float delay;
+    private bool canTurnOn = true;
+    private Vector3 spawnPointMonster;
+    private float zPosMonster;
+    private AudioSource audioSource;
+
     public bool lightTurnedUn;
-    AudioSource audioSource;
 
     private void Start()
     {

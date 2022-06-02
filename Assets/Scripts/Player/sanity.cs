@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class sanity : MonoBehaviour
 {
-    [SerializeField] GameObject flashLight;
-    [SerializeField] float sanityTimer;
-    [SerializeField] float maxSanityTime;
+    [SerializeField] private GameObject flashLight;
+    [SerializeField] private float sanityTimer;
+    [SerializeField] private float maxSanityTime;
 
-    FlashLight flashLightScript;
-    bool youDied;
+    private FlashLight flashLightScript;
+    private bool youDied;
     // Start is called before the first frame update
     void Start()
     {

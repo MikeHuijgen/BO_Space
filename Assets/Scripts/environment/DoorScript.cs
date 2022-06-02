@@ -5,30 +5,30 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     [Header("Door Settings")]
-    [SerializeField] int closeDoorTime;
-    [SerializeField] float speed;
-    [SerializeField] Vector3 oldDoorPos;
-    [SerializeField] Vector3 maxHeightPos;
-    [SerializeField] int openHeight;
+    [SerializeField] private int closeDoorTime;
+    [SerializeField] private float speed;
+    [SerializeField] private Vector3 oldDoorPos;
+    [SerializeField] private Vector3 maxHeightPos;
+    [SerializeField] private int openHeight;
     
     [Header("Bool Settings")]
     [SerializeField] public bool isOpening = false;
-    [SerializeField] bool activeTerminal1 = false;
-    [SerializeField] bool activeTerminal2 = false;
+    [SerializeField] private bool activeTerminal1 = false;
+    [SerializeField] private bool activeTerminal2 = false;
     [SerializeField] public bool isClosing;
 
     [Header("References")]
-    [SerializeField] Transform beginPos;
-    [SerializeField] Collider doorTrigger;
-    [SerializeField] GameObject terminal1;
-    [SerializeField] GameObject terminal2;
-    [SerializeField] Transform maxHeightTransform;
+    [SerializeField] private Transform beginPos;
+    [SerializeField] private Collider doorTrigger;
+    [SerializeField] private GameObject terminal1;
+    [SerializeField] private GameObject terminal2;
+    [SerializeField] private Transform maxHeightTransform;
 
-    Terminal terminalScript1;
-    Terminal terminalScript2;
+    private Terminal terminalScript1;
+    private Terminal terminalScript2;
 
-    GameObject door;
-    float doorY;
+    private GameObject door;
+    private float doorY;
 
 
     private void Start()
@@ -44,8 +44,8 @@ public class DoorScript : MonoBehaviour
 
     private void Update()
     {
-        OpenDoor();
         doorY = door.transform.position.y;
+        OpenDoor();
         CheckIfCanOpen();
     }
 
