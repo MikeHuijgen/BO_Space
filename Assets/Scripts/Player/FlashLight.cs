@@ -6,9 +6,6 @@ public class FlashLight : MonoBehaviour
 {
     [Header("Flashlight Settings")]
     [SerializeField] private float intensityLight;
-    [SerializeField] private float lightTime;
-    [SerializeField] private float flickeringTime;
-    [SerializeField] private float maxLightTime;
     
 
     [Header("Flicker Settings")]
@@ -27,7 +24,7 @@ public class FlashLight : MonoBehaviour
     [SerializeField] private AudioClip turnOnSound;
 
     private float delay;
-    private bool canTurnOn = true;
+    public bool canTurnOn = true;
     private Vector3 spawnPointMonster;
     private float zPosMonster;
     private AudioSource audioSource;
@@ -45,11 +42,11 @@ public class FlashLight : MonoBehaviour
     {
         TurnOn_OffLight();
         LightTimer();
-        SpawnMonster();
     }
 
     void TurnOn_OffLight()
     {
+        // It turn the flashlight on and off and play a sound effect
         if (Input.GetKeyUp(KeyCode.G))
         {
             audioSource.PlayOneShot(turnOnSound);
@@ -59,52 +56,30 @@ public class FlashLight : MonoBehaviour
 
     void LightTimer()
     {
+        // Set the bool true or false if the flashlight is on or off
         if (headLight.enabled == true)
         {
             lightTurnedUn = true;
-            lightTime += Time.deltaTime;
         }
-        else if (!headLight.enabled)
+        else
         {
             lightTurnedUn = false;
-            lightTime -= Time.deltaTime;
         }
-        
-        if (lightTime < 0)
-        {
-            lightTime = 0;
-        }
-
-        if (lightTime >= flickeringTime)
-        {
-            if (canTurnOn)
-            {
-                StartCoroutine(LightFlicker());
-            }
-            
-        }
-
     }
 
 
-
-    IEnumerator LightFlicker()
+    public IEnumerator LightFlicker()
     {
         canTurnOn = false;
+
+        // Gives the flashlight a random intensity between the two numbers
         headLight.intensity = Random.Range(intensityRandom1,intensityRandom2);
+
+        // Gives the flashlight a random delay between flickering
         delay = Random.Range(delayRandom1, delayRandom2);
+
         yield return new WaitForSeconds(delay);
         headLight.intensity = intensityLight;
         canTurnOn = true;
-    }
-
-    void SpawnMonster()
-    { 
-        if (lightTime >= maxLightTime)
-        {
-            lightTime = 0;
-            headLight.enabled = false;
-            Instantiate(monster, monsterSpawn.position, Quaternion.identity);
-        }
     }
 }

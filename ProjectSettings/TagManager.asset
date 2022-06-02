@@ -9,6 +9,7 @@ TagManager:
   - Terminal
   - Terminal1
   - DoorTrigger
+  - monster
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,6 @@ TagManager:
   - UI
   - InteractObject
   - post processing
-  - 
   - 
   - 
   - 

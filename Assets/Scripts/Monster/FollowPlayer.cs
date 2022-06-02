@@ -27,6 +27,8 @@ public class FollowPlayer : MonoBehaviour
 
     void FollowPlayerPosition()
     {
+        // if the player turn on the flashlight the monster will go to the player position
+
         lightIsOn = flashLight.GetComponent<FlashLight>().lightTurnedUn;
 
         if (lightIsOn == true)

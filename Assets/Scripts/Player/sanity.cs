@@ -24,6 +24,7 @@ public class sanity : MonoBehaviour
 
     void SanityTimer()
     {
+        // it makes your sanityTimer go up if the flashlight is on and it goes down if the flashlight is off
         if (flashLightScript.lightTurnedUn == true && sanityTimer > 0 && !youDied)
         {
             sanityTimer -= Time.deltaTime;
@@ -33,15 +34,21 @@ public class sanity : MonoBehaviour
             sanityTimer += Time.deltaTime;
         }
 
+        // it reset your sanityTimer
         if (sanityTimer < 0)
         {
             sanityTimer = 0;
         }
         else if (sanityTimer > maxSanityTime)
         {
-            youDied = true;
-            sanityTimer = 0;
-            Debug.Log("You Died");
+            YouDied();
         }
+    }
+
+    private void YouDied()
+    {
+        youDied = true;
+        sanityTimer = 0;
+        Debug.Log("You Died");
     }
 }
