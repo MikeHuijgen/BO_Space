@@ -23,17 +23,19 @@ public class FlashLight : MonoBehaviour
     [SerializeField] Transform monsterSpawn;
 
     [Header("Sound")]
-    [SerializeField] AudioClip turnOnAndOf;
+    [SerializeField] AudioClip turnOnSound;
 
     float delay;
     bool canTurnOn = true;
     Vector3 spawnPointMonster;
     float zPosMonster;
     public bool lightTurnedUn;
+    AudioSource audioSource;
 
     private void Start()
     {
         headLight.intensity = intensityLight;
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -48,6 +50,7 @@ public class FlashLight : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.G))
         {
+            audioSource.PlayOneShot(turnOnSound);
             headLight.enabled = !headLight.enabled;
         }
     }
@@ -56,13 +59,13 @@ public class FlashLight : MonoBehaviour
     {
         if (headLight.enabled == true)
         {
-            lightTime += Time.deltaTime;
             lightTurnedUn = true;
+            lightTime += Time.deltaTime;
         }
         else if (!headLight.enabled)
         {
-            lightTime -= Time.deltaTime;
             lightTurnedUn = false;
+            lightTime -= Time.deltaTime;
         }
         
         if (lightTime < 0)
