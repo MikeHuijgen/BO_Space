@@ -85,8 +85,7 @@ public class FlashLight : MonoBehaviour
     }
 
     void LightHitSlime()
-    {
-
+    { 
         ray.origin = headLight.transform.position;
         ray.direction = headLight.transform.forward;
 
