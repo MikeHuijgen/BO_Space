@@ -6,7 +6,7 @@ public class FlashLight : MonoBehaviour
 {
     [Header("Flashlight Settings")]
     [SerializeField] private float intensityLight;
-    
+    [SerializeField] private LayerMask slimeMask;
 
     [Header("Flicker Settings")]
     [SerializeField] private int intensityRandom1;
@@ -25,9 +25,9 @@ public class FlashLight : MonoBehaviour
 
     private float delay;
     public bool canTurnOn = true;
-    private Vector3 spawnPointMonster;
-    private float zPosMonster;
     private AudioSource audioSource;
+    private Ray ray;
+    private RaycastHit hitInfo;
 
     public bool lightTurnedUn;
 
@@ -60,6 +60,7 @@ public class FlashLight : MonoBehaviour
         if (headLight.enabled == true)
         {
             lightTurnedUn = true;
+            LightHitSlime();
         }
         else
         {
@@ -81,5 +82,20 @@ public class FlashLight : MonoBehaviour
         yield return new WaitForSeconds(delay);
         headLight.intensity = intensityLight;
         canTurnOn = true;
+    }
+
+    void LightHitSlime()
+    {
+
+        ray.origin = headLight.transform.position;
+        ray.direction = headLight.transform.forward;
+
+        if (Physics.Raycast(ray, out hitInfo, 10 ,slimeMask))
+        {
+            Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1f);
+            DissolveSlime dissolveSlimeScript = hitInfo.transform.GetComponent<DissolveSlime>();
+            dissolveSlimeScript.DissolveHit(true);
+        }
+
     }
 }

@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51f4ca54bac52e4a83ed407ed02b9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveX: 2
   speed: 5
 --- !u!54 &2548625137789629193
 Rigidbody:
@@ -364,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a388a7779a2104984247d96c33a277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraT: {fileID: 0}
+  cameraT: {fileID: 963194228}
   interactText: {fileID: 8552035786113367091}
   objectPickUp: {fileID: 0}
   Ibutton:
@@ -456,6 +455,10 @@ PrefabInstance:
     - target: {fileID: 6192561860109239963, guid: efc6d2b46d0fe1a478237776eb9784c7, type: 3}
       propertyPath: m_Name
       value: PlayerUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192561860109239963, guid: efc6d2b46d0fe1a478237776eb9784c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6192561860109239967, guid: efc6d2b46d0fe1a478237776eb9784c7, type: 3}
       propertyPath: m_Pivot.x
@@ -573,6 +576,10 @@ PrefabInstance:
     - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
       propertyPath: dirLight
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
+      propertyPath: slimeMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 5542040244117594444, guid: 0830088d6b9973647b09d59641208e80, type: 3}
       propertyPath: m_Name
