@@ -37,6 +37,7 @@ public class FollowPlayer : MonoBehaviour
         }
         else
         {
+            //Need to change with the waypoint path
             agent.SetDestination(startPos);
         }
     }

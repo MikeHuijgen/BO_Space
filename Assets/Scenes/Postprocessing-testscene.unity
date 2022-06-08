@@ -4611,6 +4611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 2951974500542693978, guid: 050ccaa0c742cc6449c5264aa8a1ca1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 050ccaa0c742cc6449c5264aa8a1ca1e, type: 3}
 --- !u!1001 &3015817190433681818
@@ -4624,6 +4628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2548625137789629188, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 755665273}
     - target: {fileID: 2548625137789629190, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
       propertyPath: m_RootOrder
       value: 6

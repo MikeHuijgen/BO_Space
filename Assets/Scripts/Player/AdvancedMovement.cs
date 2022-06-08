@@ -5,14 +5,13 @@ using UnityEngine;
 public class AdvancedMovement : MonoBehaviour
 {
 
-    public float speed = 12f;
+    [SerializeField] private float speed = 12f;
 
+    CapsuleCollider col;
 
-    BoxCollider col;
-    // Start is called before the first frame update
     void Start()
     {
-        col = GetComponent<BoxCollider>();
+        col = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -20,13 +19,11 @@ public class AdvancedMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         { 
-            col.size = new Vector3(1f, .3f, 1f);
-
+            col.height = 1;
         }
         if (Input.GetKeyUp(KeyCode.C))
         {
-            col.size = new Vector3(1f, 1f, 1f);
-
+            col.height = 2;
         }
         
 
