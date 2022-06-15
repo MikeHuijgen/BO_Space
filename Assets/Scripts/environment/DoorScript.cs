@@ -16,6 +16,7 @@ public class DoorScript : MonoBehaviour
     [SerializeField] private bool activeTerminal1 = false;
     [SerializeField] private bool activeTerminal2 = false;
     [SerializeField] public bool isClosing;
+    [SerializeField] public bool monsterCanOpen = false;
 
     [Header("References")]
     [SerializeField] private Transform beginPos;
@@ -63,6 +64,7 @@ public class DoorScript : MonoBehaviour
         {
             terminalScript1.SetFalse(true);
             terminalScript2.SetFalse(true);
+            monsterCanOpen = true;
             doorTrigger.enabled = true;
         }
     }

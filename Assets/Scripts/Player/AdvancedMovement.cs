@@ -2,31 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AdvancedMovement : MonoBehaviour
-{
-
-    [SerializeField] private float speed = 12f;
-
-    CapsuleCollider col;
+{ 
 
     void Start()
     {
-        col = GetComponent<CapsuleCollider>();
+     
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        { 
-            col.height = 1;
-        }
-        if (Input.GetKeyUp(KeyCode.C))
+        if (Input.GetButtonDown("Crouch"))
         {
-            col.height = 2;
+            transform.localScale = new Vector3(0.5f, 0.7f, 0.5f);
+            transform.position += Vector3.down * 0.6f;
         }
-        
-
+        if (Input.GetButtonUp("Crouch"))
+        {
+            transform.localScale = new Vector3(0.5f, 1f, 0.5f);
+            transform.position += Vector3.up * 0.6f;
+        }
     }
    
 
