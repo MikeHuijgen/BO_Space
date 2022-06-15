@@ -2034,7 +2034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cdcbafb216c2b4897ac52daac2afc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 500
   playerBody: {fileID: 755665273}
 --- !u!1 &983510702 stripped
 GameObject:
@@ -2911,7 +2911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59567b3e4f37d0149829b59d4a259506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolveShader: {fileID: 2100000, guid: d1a6d0cad522a9741beed1a3abad88ad, type: 2}
+  dissolveSpeed: 0.5
 --- !u!65 &1333109746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2944,7 +2944,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d1a6d0cad522a9741beed1a3abad88ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2982,7 +2982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333109744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.89, y: 6, z: -33.93}
+  m_LocalPosition: {x: 30.833, y: 6.028, z: -33.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

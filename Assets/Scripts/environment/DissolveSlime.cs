@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class DissolveSlime : MonoBehaviour
 {
-    [SerializeField] float dissolveSpeed;
+    [SerializeField] private float dissolveSpeed;
+    [SerializeField] private ParticleSystem smokePartical;
+
     private Material dissolveShader;
     private float maxLifetime;
-    bool dissolve = false;
+    private bool dissolve = false;
 
     private void Start()
     {
@@ -34,6 +36,8 @@ public class DissolveSlime : MonoBehaviour
         // It activate the shader to dissolve if dissolve is true
         if (dissolve == true)
         {
+            smokePartical.Play();
+            gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             maxLifetime -= dissolveSpeed * Time.deltaTime;
             dissolveShader.SetFloat("Lifetime", maxLifetime);
         }
@@ -43,6 +47,7 @@ public class DissolveSlime : MonoBehaviour
     {
         if (maxLifetime < 0f)
         {
+            smokePartical.Stop();
             Destroy(gameObject);
         }
     }
