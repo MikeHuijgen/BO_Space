@@ -651,6 +651,8 @@ MonoBehaviour:
   - {fileID: 662002217}
   - {fileID: 542781555}
   - {fileID: 6702594}
+  destPoint: 0
+  agent: {fileID: 0}
   doorScript: {fileID: 1086817415}
 --- !u!65 &1070959528
 BoxCollider:
@@ -764,6 +766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 846140579}
   flashLight: {fileID: 120094065}
+  patrolling: {fileID: 1070959527}
+  doorScript: {fileID: 1086817415}
+  agent: {fileID: 1070959532}
 --- !u!114 &1086817415 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1848476656967634284, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
@@ -1070,6 +1075,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTest
       objectReference: {fileID: 0}
+    - target: {fileID: 1848476656132499830, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848476656132499830, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848476656375767175, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848476656375767175, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1848476656772853055, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
@@ -1080,11 +1101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1848476656967634280, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1848476656967634280, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.14
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1848476656967634287, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
       propertyPath: m_NavMeshLayer
