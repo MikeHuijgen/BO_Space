@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class patrolling : MonoBehaviour
 {
     public Transform[] points;
-    private int destPoint = 0;
-    private NavMeshAgent agent;
+    public int destPoint = 0;
+    public NavMeshAgent agent;
     private GameObject door;
     public DoorScript doorScript;
 

@@ -604,6 +604,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2548625137789629190, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
   m_PrefabInstance: {fileID: 1982317766}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &888605784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8050115281583100884, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
+  m_PrefabInstance: {fileID: 1982317766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1070959526
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +623,7 @@ GameObject:
   - component: {fileID: 1070959528}
   - component: {fileID: 1070959527}
   - component: {fileID: 1070959532}
+  - component: {fileID: 1070959533}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -645,6 +651,7 @@ MonoBehaviour:
   - {fileID: 662002217}
   - {fileID: 542781555}
   - {fileID: 6702594}
+  destPoint: 0
   doorScript: {fileID: 1086817415}
 --- !u!65 &1070959528
 BoxCollider:
@@ -744,6 +751,23 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1070959533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070959526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201a4beca9a8c9343869132fdbbf608e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 846140579}
+  flashLight: {fileID: 888605784}
+  patrolling: {fileID: 1070959527}
+  doorScript: {fileID: 1086817415}
+  agent: {fileID: 1070959532}
 --- !u!114 &1086817415 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1848476656967634284, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
