@@ -183,6 +183,11 @@ Transform:
   m_Father: {fileID: 524286847}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &120094065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8050115281583100884, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
+  m_PrefabInstance: {fileID: 1982317766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &144653506
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,11 +609,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2548625137789629190, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
   m_PrefabInstance: {fileID: 1982317766}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &888605784 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8050115281583100884, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
-  m_PrefabInstance: {fileID: 1982317766}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1070959526
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +651,6 @@ MonoBehaviour:
   - {fileID: 662002217}
   - {fileID: 542781555}
   - {fileID: 6702594}
-  destPoint: 0
   doorScript: {fileID: 1086817415}
 --- !u!65 &1070959528
 BoxCollider:
@@ -764,10 +763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 846140579}
-  flashLight: {fileID: 888605784}
-  patrolling: {fileID: 1070959527}
-  doorScript: {fileID: 1086817415}
-  agent: {fileID: 1070959532}
+  flashLight: {fileID: 120094065}
 --- !u!114 &1086817415 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1848476656967634284, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}

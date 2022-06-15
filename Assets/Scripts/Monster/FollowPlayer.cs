@@ -8,22 +8,16 @@ public class FollowPlayer : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform player;
     [SerializeField] private GameObject flashLight;
-    
-    
-    public patrolling patrolling;
-    public DoorScript doorScript;
-    
-    
 
     private bool lightIsOn;
-    
+    private Vector3 startPos;
 
-    public NavMeshAgent agent;
+    private NavMeshAgent agent;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        
+        startPos = transform.position;
     }
 
     private void Update()
@@ -40,14 +34,6 @@ public class FollowPlayer : MonoBehaviour
         if (lightIsOn == true)
         {
             agent.SetDestination(player.position);
-        }
-        if (doorScript.monsterCanOpen == true)
-        {
-            patrolling.destPoint = (int)Mathf.Floor(Random.Range(0, 7)); }
-        else
-        {
-            //Need to change with the waypoint path
-            patrolling.destPoint = (int)Mathf.Floor(Random.Range(0, 5));
         }
     }
 }
