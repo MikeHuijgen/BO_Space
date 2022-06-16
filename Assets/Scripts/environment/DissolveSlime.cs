@@ -27,6 +27,7 @@ public class DissolveSlime : MonoBehaviour
     {
         if (gotHit == true)
         {
+            smokePartical.Play();
             dissolve = true;
         }
     }
@@ -36,7 +37,6 @@ public class DissolveSlime : MonoBehaviour
         // It activate the shader to dissolve if dissolve is true
         if (dissolve == true)
         {
-            smokePartical.Play();
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             maxLifetime -= dissolveSpeed * Time.deltaTime;
             dissolveShader.SetFloat("Lifetime", maxLifetime);

@@ -8,7 +8,6 @@ public class Interact : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform cameraT;
     [SerializeField] private TMP_Text interactText;
-    [SerializeField] private Transform objectPickUp;
 
     [Header("LayerMasks")]
     [SerializeField] private LayerMask Ibutton;
@@ -17,7 +16,6 @@ public class Interact : MonoBehaviour
     private RaycastHit hitInfo;
 
     private bool pickedUp;
-    private InteractObject interactObject;
     private GameObject door;
     private DoorScript doorScript;
     
@@ -32,7 +30,6 @@ public class Interact : MonoBehaviour
     private void Update()
     {
         CheckRayCast();
-        DropObject();
     }
 
     void CheckRayCast()
@@ -40,7 +37,7 @@ public class Interact : MonoBehaviour
         ray.origin = cameraT.position;
         ray.direction = cameraT.forward;
 
-        if (Physics.Raycast(ray, out hitInfo, 10f, Ibutton))
+        if (Physics.Raycast(ray, out hitInfo, 2f, Ibutton))
         {
             ShowInteractText();
 
@@ -53,20 +50,6 @@ public class Interact : MonoBehaviour
                 InteractWithButton();
             }
         }
-        else if (Physics.Raycast(ray, out hitInfo, 10f, Iobject))
-        {
-            ShowInteractText();
-
-            interactText.text = $"Press E to pick up the object";
-
-            Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1f);
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                objectPickUp = hitInfo.transform.parent.transform;
-                InteractWithObject();
-            }
-        }
         else
         {
             interactText.enabled = false;
@@ -77,16 +60,6 @@ public class Interact : MonoBehaviour
     {
         Terminal terminal = hitInfo.transform.GetComponent<Terminal>();
         terminal.Active(true);
-    }
-
-    void InteractWithObject()
-    {
-        Debug.Log("You interact with the object");
-
-        pickedUp = true;
-
-        interactObject = objectPickUp.transform.GetComponent<InteractObject>();
-        interactObject.IsPickedUp(pickedUp);
     }
 
     public void CheckSeeInteractText(bool value)
@@ -111,14 +84,6 @@ public class Interact : MonoBehaviour
         else
         {
             interactText.enabled = false;
-        }
-    }
-
-    void DropObject()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            interactObject.PlaceObjectBack(true);
         }
     }
 }

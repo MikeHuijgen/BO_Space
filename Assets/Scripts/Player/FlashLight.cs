@@ -18,7 +18,6 @@ public class FlashLight : MonoBehaviour
     [SerializeField] private Light headLight;
     [SerializeField] private GameObject monster;
     [SerializeField] private Transform flashLight;
-    [SerializeField] private Transform monsterSpawn;
 
     [Header("Sound")]
     [SerializeField] private AudioClip turnOnSound;

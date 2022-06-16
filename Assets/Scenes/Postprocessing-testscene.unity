@@ -467,6 +467,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1601510054, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.391
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601510054, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601510054, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.848
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607803406, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.532
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607803406, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.772
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607803406, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.116
+      objectReference: {fileID: 0}
     - target: {fileID: 1848476656132499826, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2135,6 +2159,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 661c147b01352b04998410e630aa493a, type: 3}
       propertyPath: m_Name
       value: monster_unfinn1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 661c147b01352b04998410e630aa493a, type: 3}
+      propertyPath: m_TagString
+      value: monster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 661c147b01352b04998410e630aa493a, type: 3}
@@ -10873,17 +10901,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445478580}
   m_Mesh: {fileID: 2314011402202377718, guid: d1b34c0edacda8f488d66f17dadd1da4, type: 3}
---- !u!1 &1448214845 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1848476656967634287, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
-  m_PrefabInstance: {fileID: 1743007469}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1448214846 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1848476656967634284, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
   m_PrefabInstance: {fileID: 1743007469}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448214845}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b77b0bc37545b247a944bc6a771f427, type: 3}
@@ -14803,10 +14826,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1848476656132499826, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848476656132499826, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.808353
       objectReference: {fileID: 0}
@@ -14850,10 +14869,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTest
       objectReference: {fileID: 0}
-    - target: {fileID: 1848476656967634284, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
-      propertyPath: door
-      value: 
-      objectReference: {fileID: 1448214845}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67faf525d5726f84bab354dad850e4b7, type: 3}
 --- !u!1 &1747742753

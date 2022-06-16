@@ -7,13 +7,20 @@ public class Terminal : MonoBehaviour
     [SerializeField] public bool active;
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject terminal;
+    [SerializeField] private GameObject terminalLight;
+    private Material terminalLightMat;
     private void Start()
     {
         terminal = this.gameObject;
+        terminalLight.GetComponent<Light>().color = Color.red;
+        terminalLightMat = terminalLight.GetComponent<Renderer>().material;
     }
+
     public void Active(bool value)
     {
         active = value;
+        terminalLightMat.SetColor("colormat", Color.green);
+        terminalLight.GetComponent<Light>().color = Color.green;
         terminal.layer = 2;
     }
 
