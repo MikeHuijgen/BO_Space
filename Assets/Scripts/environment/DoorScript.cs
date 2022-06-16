@@ -20,6 +20,7 @@ public class DoorScript : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Transform beginPos;
+    [SerializeField] private GameObject door;
     [SerializeField] private Collider doorTrigger;
     [SerializeField] private GameObject terminal1;
     [SerializeField] private GameObject terminal2;
@@ -28,13 +29,11 @@ public class DoorScript : MonoBehaviour
     private Terminal terminalScript1;
     private Terminal terminalScript2;
 
-    private GameObject door;
     private float doorY;
 
 
     private void Start()
     {
-        door = GameObject.FindWithTag("Door");
         oldDoorPos = beginPos.transform.position;
         terminalScript1 = terminal1.transform.GetComponent<Terminal>();
         terminalScript2 = terminal2.transform.GetComponent<Terminal>();
