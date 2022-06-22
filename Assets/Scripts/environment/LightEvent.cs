@@ -19,16 +19,18 @@ public class LightEvent : MonoBehaviour
     {
         terminalActive = terminal.GetComponent<Terminal>().active;
 
-        if (terminalActive)
+        if (terminalActive == true)
         {
+            Debug.Log("i");
             StartCoroutine(LightEventStart());
         }
     }
 
     IEnumerator LightEventStart()
     {
-
+        roomLight.enabled = true;
         yield return new WaitForSeconds(EventTime);
+        roomLight.enabled = false;
 
     }
 }
