@@ -6,7 +6,6 @@ public class FlashLight : MonoBehaviour
 {
     [Header("Flashlight Settings")]
     [SerializeField] private float intensityLight;
-    [SerializeField] private LayerMask slimeMask;
 
     [Header("Flicker Settings")]
     [SerializeField] private int intensityRandom1;
@@ -16,14 +15,12 @@ public class FlashLight : MonoBehaviour
    
     [Header("References")]
     [SerializeField] private Light headLight;
-    [SerializeField] private GameObject monster;
-    [SerializeField] private Transform flashLight;
 
     [Header("Sound")]
     [SerializeField] private AudioClip turnOnSound;
 
     private float delay;
-    public bool canTurnOn = true;
+    public bool canFlicker = true;
     private AudioSource audioSource;
     private Ray ray;
     private RaycastHit hitInfo;
@@ -70,7 +67,7 @@ public class FlashLight : MonoBehaviour
 
     public IEnumerator LightFlicker()
     {
-        canTurnOn = false;
+        canFlicker = false;
 
         // Gives the flashlight a random intensity between the two numbers
         headLight.intensity = Random.Range(intensityRandom1,intensityRandom2);
@@ -80,7 +77,7 @@ public class FlashLight : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
         headLight.intensity = intensityLight;
-        canTurnOn = true;
+        canFlicker = true;
     }
 
     void LightHitSlime()

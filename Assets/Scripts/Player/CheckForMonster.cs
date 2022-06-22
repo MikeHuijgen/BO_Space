@@ -19,7 +19,7 @@ public class CheckForMonster : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // It checks if the monster is in your trigger
-        if (other.gameObject.tag == "monster")
+        if (other.gameObject.CompareTag("monster"))
         {
             flashLightScript.StartCoroutine(flashLightScript.LightFlicker());
         }
@@ -30,7 +30,7 @@ public class CheckForMonster : MonoBehaviour
         // If the monster not in the trigger anymore canTurnOn turns true
         if (other.gameObject.tag == "monster")
         {
-            flashLightScript.canTurnOn = true;
+            flashLightScript.canFlicker = true;
         }
     }
 }
