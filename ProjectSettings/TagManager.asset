@@ -3,17 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - InteractText
+  - Door
+  - Terminal
+  - Terminal1
+  - DoorTrigger
+  - monster
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - InteractButton
   - Water
   - UI
+  - InteractObject
   - post processing
-  - 
-  - 
+  - Monster Slime
   - 
   - 
   - 

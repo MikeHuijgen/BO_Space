@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 2682690087988791628}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -191,6 +192,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &2682690087988791628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cdcbafb216c2b4897ac52daac2afc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 100
+  playerBody: {fileID: 2548625137789629190}
 --- !u!1 &2548625137789629186
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +218,6 @@ GameObject:
   - component: {fileID: 2548625137789629191}
   - component: {fileID: 2548625137789629184}
   - component: {fileID: 2548625137789629185}
-  - component: {fileID: 2548625137789629194}
   - component: {fileID: 2548625137789629188}
   - component: {fileID: 2548625137789629189}
   - component: {fileID: 2548625137789629193}
@@ -294,21 +308,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2548625137789629194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2548625137789629186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45d2f49b95931d647b6092148e97db7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashLight: {fileID: 8050115281583100884}
-  sanityTimer: 0
-  maxSanityTime: 30
 --- !u!114 &2548625137789629188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f91ccd0e53f5241ac96faaa6a77a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
 --- !u!114 &2548625137789629189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51f4ca54bac52e4a83ed407ed02b9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveX: 2
   speed: 5
 --- !u!54 &2548625137789629193
 Rigidbody:
@@ -364,9 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a388a7779a2104984247d96c33a277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraT: {fileID: 0}
+  cameraT: {fileID: 963194228}
   interactText: {fileID: 8552035786113367091}
-  objectPickUp: {fileID: 0}
   Ibutton:
     serializedVersion: 2
     m_Bits: 8
@@ -456,6 +452,10 @@ PrefabInstance:
     - target: {fileID: 6192561860109239963, guid: efc6d2b46d0fe1a478237776eb9784c7, type: 3}
       propertyPath: m_Name
       value: PlayerUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192561860109239963, guid: efc6d2b46d0fe1a478237776eb9784c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6192561860109239967, guid: efc6d2b46d0fe1a478237776eb9784c7, type: 3}
       propertyPath: m_Pivot.x
@@ -574,6 +574,10 @@ PrefabInstance:
       propertyPath: dirLight
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5542040244117594435, guid: 0830088d6b9973647b09d59641208e80, type: 3}
+      propertyPath: slimeMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5542040244117594444, guid: 0830088d6b9973647b09d59641208e80, type: 3}
       propertyPath: m_Name
       value: FlashLight
@@ -640,11 +644,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0830088d6b9973647b09d59641208e80, type: 3}
---- !u!1 &8050115281583100884 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5542040244117594444, guid: 0830088d6b9973647b09d59641208e80, type: 3}
-  m_PrefabInstance: {fileID: 2548625137968099992}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8050115281583100887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5542040244117594447, guid: 0830088d6b9973647b09d59641208e80, type: 3}
