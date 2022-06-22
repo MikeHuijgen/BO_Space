@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Buttons : MonoBehaviour
+public class MainButtons : MonoBehaviour
 {
-    int levelIndex = 1;
-    int mainMenuIndex = 0;
+    private int levelIndex = 1;
+    private int mainMenuIndex = 0;
     public void OnClickPlay()
     {
         SceneManager.LoadScene(levelIndex);

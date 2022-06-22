@@ -11,11 +11,9 @@ public class Interact : MonoBehaviour
 
     [Header("LayerMasks")]
     [SerializeField] private LayerMask Ibutton;
-    [SerializeField] private LayerMask Iobject;
     private Ray ray;
     private RaycastHit hitInfo;
 
-    private bool pickedUp;
     private GameObject door;
     private DoorScript doorScript;
     

@@ -14975,6 +14975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6192561860109239963, guid: efc6d2b46d0fe1a478237776eb9784c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6192561860109239967, guid: efc6d2b46d0fe1a478237776eb9784c7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -19500,6 +19504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2548625137789629189, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2548625137789629190, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -19548,6 +19556,10 @@ PrefabInstance:
       propertyPath: interactText
       value: 
       objectReference: {fileID: 1901152021}
+    - target: {fileID: 2682690087988791628, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
+      propertyPath: mouseSensitivity
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
 --- !u!1001 &5000763241731572877
