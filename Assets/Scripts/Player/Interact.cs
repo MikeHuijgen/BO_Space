@@ -37,7 +37,7 @@ public class Interact : MonoBehaviour
         ray.origin = cameraT.position;
         ray.direction = cameraT.forward;
 
-        if (Physics.Raycast(ray, out hitInfo, 2f, Ibutton))
+        if (Physics.Raycast(ray, out hitInfo, 10f, Ibutton))
         {
             ShowInteractText();
 

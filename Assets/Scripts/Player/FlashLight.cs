@@ -88,11 +88,19 @@ public class FlashLight : MonoBehaviour
         ray.origin = headLight.transform.position;
         ray.direction = headLight.transform.forward;
 
-        if (Physics.Raycast(ray, out hitInfo, 10 ,slimeMask))
+        if (Physics.Raycast(ray, out hitInfo, 10))
         {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1f);
-            DissolveSlime dissolveSlimeScript = hitInfo.transform.GetComponent<DissolveSlime>();
-            dissolveSlimeScript.DissolveHit(true);
+            if (hitInfo.collider.tag == "Slime")
+            {
+                DissolveSlime dissolveSlimeScript = hitInfo.transform.GetComponent<DissolveSlime>();
+                dissolveSlimeScript.DissolveHit(true);
+            }
+            else
+            {
+                Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1f);
+            }
+
         }
 
     }

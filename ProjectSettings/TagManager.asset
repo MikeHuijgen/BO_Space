@@ -10,6 +10,7 @@ TagManager:
   - Terminal1
   - DoorTrigger
   - monster
+  - Slime
   layers:
   - Default
   - TransparentFX
