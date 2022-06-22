@@ -521,6 +521,7 @@ MonoBehaviour:
   active: 0
   door: {fileID: 1848476656967634287}
   terminal: {fileID: 0}
+  terminalLight: {fileID: 0}
 --- !u!1 &1848476656967634287
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,14 +633,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeDoorTime: 1
   speed: 20
-  oldDoorPos: {x: 0, y: 0, z: 0}
-  maxHeightPos: {x: 0, y: 0, z: 0}
-  openHeight: 12
   isOpening: 0
   activeTerminal1: 0
   activeTerminal2: 0
   isClosing: 0
   beginPos: {fileID: 1848476656268141696}
+  door: {fileID: 1848476656967634287}
   doorTrigger: {fileID: 1848476656772853050}
   terminal1: {fileID: 1848476656937274507}
   terminal2: {fileID: 1848476657134486138}
@@ -755,3 +754,4 @@ MonoBehaviour:
   active: 0
   door: {fileID: 1848476656967634287}
   terminal: {fileID: 0}
+  terminalLight: {fileID: 0}

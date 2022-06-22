@@ -11,12 +11,12 @@ public class FollowPlayer : MonoBehaviour
     
     
     public patrolling patrolling;
-    public DoorScript doorScript;
+    //public DoorScript doorScript;
 
-    float waitTime = 0;
+    
 
     private bool lightIsOn;
-    
+    private bool chasing; 
 
     public NavMeshAgent agent;
 
@@ -34,25 +34,27 @@ public class FollowPlayer : MonoBehaviour
     void FollowPlayerPosition()
     {
         // if the player turn on the flashlight the monster will go to the player position
-        if (lightIsOn && flashLight.GetComponent<FlashLight>().lightTurnedUn == false)
-        {
-            waitTime = 5;
-        }
-        if(waitTime>0)
-        {
-            waitTime -= Time.deltaTime;
-            return;
-        }
         lightIsOn = flashLight.GetComponent<FlashLight>().lightTurnedUn;
 
         if (lightIsOn == true)
         {
+            chasing = true;
             agent.SetDestination(player.position);
         }
-        else
+        else if(lightIsOn == false && chasing == true)
         {
-            //Need to change with the waypoint path
-            patrolling.destPoint = (int)Mathf.Floor(Random.Range(0, 5));
+            StartCoroutine(Freeze());
         }
+    }
+
+    public IEnumerator Freeze()
+    {
+        chasing = false;
+        agent.isStopped = true;
+        Debug.Log("Im waiting 1 second");
+        yield return new WaitForSeconds(2);
+        Debug.Log("kies een nieuwe patrol destination");
+        agent.isStopped = false;
+        patrolling.GotoNextPoint();
     }
 }

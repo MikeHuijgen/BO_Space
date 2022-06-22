@@ -10,21 +10,24 @@ public class patrolling : MonoBehaviour
     public NavMeshAgent agent;
     private GameObject door;
     public DoorScript doorScript;
+    public LightEvent lightpoint;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
-        doorScript.GetComponent<DoorScript>();
+        //doorScript.GetComponent<DoorScript>();
         //doorScript = FindObjectOfType<DoorScript>();
 
 
 
-        GotoNextPoint();
+
     }
 
-    void GotoNextPoint()
+    public void GotoNextPoint()
     {
         if (points.Length == 0)
             return;
@@ -35,16 +38,20 @@ public class patrolling : MonoBehaviour
 
         agent.destination = points[destPoint].position;
         destPoint = (destPoint + 1) % points.Length;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
        
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        if (agent.remainingDistance < 0.5f)
             GotoNextPoint();
     
-
+        if(LightEvent.roomLightActive == true)
+        {
+            agent.SetDestination(lightpoint.transform.position);
+        }
     }
 
 
