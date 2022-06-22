@@ -8,7 +8,7 @@ public class LightEvent : MonoBehaviour
     [SerializeField] private GameObject terminal;
     [SerializeField] private Light roomLight;
     [SerializeField] public bool roomLightActive;
-    [SerializeField] private bool terminalActive;
+    
 
     private void Update()
     {
@@ -17,9 +17,9 @@ public class LightEvent : MonoBehaviour
 
     private void CheckTerminalActive()
     {
-        terminalActive = terminal.GetComponent<Terminal>().active;
+        roomLightActive = terminal.GetComponent<Terminal>().active;
 
-        if (terminalActive == true)
+        if (roomLightActive == true)
         {
             Debug.Log("i");
             StartCoroutine(LightEventStart());

@@ -28,11 +28,9 @@ public class patrolling : MonoBehaviour
     }
 
     public void GotoNextPoint()
-    {
-        if (lightpoint.roomLightActive == true)
-        {
-            agent.SetDestination(lightpoint.transform.position);
-        }
+    { 
+       
+        
         if (points.Length == 0)
             return;
         else
@@ -48,9 +46,17 @@ public class patrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        if (agent.remainingDistance < 0.5f)
+        if (lightpoint.roomLightActive == true)
+        {
+            Debug.Log("if roomLightActive == true, go to light");
+            agent.SetDestination(lightpoint.transform.position);
+        }
+     
+    if (agent.remainingDistance < 0.5f)
+        {
             GotoNextPoint();
+        }
+            
     
         
     }
