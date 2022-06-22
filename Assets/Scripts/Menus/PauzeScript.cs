@@ -5,12 +5,16 @@ using TMPro;
 
 public class PauzeScript : MonoBehaviour
 {
+    [SerializeField] private Camera menuCamera;
     [SerializeField] Canvas pauzeScreen;
+    [SerializeField] private Canvas playerUI;
     [SerializeField] private MouseLook mouseLook;
+    [SerializeField] private Camera playerCamera;
 
     private void Start()
     {
         pauzeScreen.enabled = false;
+        menuCamera.enabled = false;
     }
 
     private void Update()
@@ -27,11 +31,17 @@ public class PauzeScript : MonoBehaviour
 
         if (pauzeScreen.enabled)
         {
+            playerUI.enabled = false;
+            menuCamera.enabled = true;
+            playerCamera.enabled = false;
             Time.timeScale = 0;
             mouseLook.curserLock = false;
         }
         else
         {
+            playerUI.enabled = true;
+            playerCamera.enabled = true;
+            menuCamera.enabled = false;
             Time.timeScale = 1;
         }
     }

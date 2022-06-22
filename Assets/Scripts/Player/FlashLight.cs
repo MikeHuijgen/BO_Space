@@ -37,7 +37,7 @@ public class FlashLight : MonoBehaviour
     void Update()
     {
         TurnOn_OffLight();
-        LightTimer();
+        TurnOnLightBool();
     }
 
     void TurnOn_OffLight()
@@ -50,7 +50,7 @@ public class FlashLight : MonoBehaviour
         }
     }
 
-    void LightTimer()
+    void TurnOnLightBool()
     {
         // Set the bool true or false if the flashlight is on or off
         if (headLight.enabled == true)
@@ -67,8 +67,6 @@ public class FlashLight : MonoBehaviour
 
     public IEnumerator LightFlicker()
     {
-        canFlicker = false;
-
         // Gives the flashlight a random intensity between the two numbers
         headLight.intensity = Random.Range(intensityRandom1,intensityRandom2);
 
@@ -77,7 +75,6 @@ public class FlashLight : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
         headLight.intensity = intensityLight;
-        canFlicker = true;
     }
 
     void LightHitSlime()

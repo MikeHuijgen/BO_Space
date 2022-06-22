@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] public bool playerDied = false;
+    [SerializeField] private MouseLook mouselook;
     [SerializeField] private Canvas deathScreen;
+    [SerializeField] private Canvas playerUI;
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private Camera menuCamera;
 
     private void Update()
     {
@@ -22,6 +26,11 @@ public class PlayerDeath : MonoBehaviour
 
         if (playerDied)
         {
+            mouselook.curserLock = false;
+            Time.timeScale = 0;
+            playerUI.enabled = false;
+            menuCamera.enabled = true;
+            playerCamera.enabled = false;
             deathScreen.enabled = true;
         }
     }
