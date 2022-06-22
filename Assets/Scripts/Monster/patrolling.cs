@@ -28,10 +28,6 @@ public class patrolling : MonoBehaviour
     {
         if (points.Length == 0)
             return;
-        if (doorScript.monsterCanOpen == true)
-        {
-            destPoint = (int)Mathf.Floor(Random.Range(0, 7));
-        }
         else
         {
             destPoint = (int)Mathf.Floor(Random.Range(0, 5));

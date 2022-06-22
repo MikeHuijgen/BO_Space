@@ -7,16 +7,14 @@ public class DoorScript : MonoBehaviour
     [Header("Door Settings")]
     [SerializeField] private int closeDoorTime;
     [SerializeField] private float speed;
-    [SerializeField] private Vector3 oldDoorPos;
-    [SerializeField] private Vector3 maxHeightPos;
-    [SerializeField] private int openHeight;
+    private Vector3 oldDoorPos;
+    private Vector3 maxHeightPos;
     
     [Header("Bool Settings")]
     [SerializeField] public bool isOpening = false;
     [SerializeField] private bool activeTerminal1 = false;
     [SerializeField] private bool activeTerminal2 = false;
-    [SerializeField] public bool isClosing;
-    [SerializeField] public bool monsterCanOpen = false;
+    public bool isClosing;
 
     [Header("References")]
     [SerializeField] private Transform beginPos;
@@ -61,9 +59,7 @@ public class DoorScript : MonoBehaviour
 
         if (activeTerminal1 == true && activeTerminal2 == true)
         {
-            terminalScript1.SetFalse(true);
-            terminalScript2.SetFalse(true);
-            monsterCanOpen = true;
+            StartCoroutine(SetTerminalsFalse());
             doorTrigger.enabled = true;
         }
     }
@@ -100,5 +96,12 @@ public class DoorScript : MonoBehaviour
     {
         yield return new WaitForSeconds(closeDoorTime);
         isClosing = true;
+    }
+
+    IEnumerator SetTerminalsFalse()
+    {
+        yield return new WaitForSeconds(1);
+        terminalScript1.SetFalse(true);
+        terminalScript2.SetFalse(true);
     }
 }

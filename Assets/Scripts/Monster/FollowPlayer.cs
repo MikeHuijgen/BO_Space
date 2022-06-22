@@ -49,6 +49,10 @@ public class FollowPlayer : MonoBehaviour
         {
             agent.SetDestination(player.position);
         }
-     
+        else
+        {
+            //Need to change with the waypoint path
+            patrolling.destPoint = (int)Mathf.Floor(Random.Range(0, 5));
+        }
     }
 }

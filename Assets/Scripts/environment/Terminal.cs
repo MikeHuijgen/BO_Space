@@ -29,8 +29,8 @@ public class Terminal : MonoBehaviour
     {
         if (value == true)
         {
-            active = false;
-            
+            active = false;      
         }
     }
+
 }
