@@ -29,6 +29,10 @@ public class patrolling : MonoBehaviour
 
     public void GotoNextPoint()
     {
+        if (lightpoint.roomLightActive == true)
+        {
+            agent.SetDestination(lightpoint.transform.position);
+        }
         if (points.Length == 0)
             return;
         else
@@ -48,10 +52,7 @@ public class patrolling : MonoBehaviour
         if (agent.remainingDistance < 0.5f)
             GotoNextPoint();
     
-        if(lightpoint.roomLightActive == true)
-        {
-            agent.SetDestination(lightpoint.transform.position);
-        }
+        
     }
 
 

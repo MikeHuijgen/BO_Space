@@ -52,7 +52,7 @@ public class FollowPlayer : MonoBehaviour
         chasing = false;
         agent.isStopped = true;
         Debug.Log("Im waiting 1 second");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Debug.Log("kies een nieuwe patrol destination");
         agent.isStopped = false;
         patrolling.GotoNextPoint();
