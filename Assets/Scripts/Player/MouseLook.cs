@@ -10,12 +10,14 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
 
     float xRotation = 0f;
-  
-    void Start()
+
+    public bool curserLock;
+
+    private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        curserLock = true;
     }
-     
+
 
     void Update()
     {
@@ -32,5 +34,21 @@ public class MouseLook : MonoBehaviour
        // {
            // transform.Translate.yposition(0);
        // }
+
+        MouseCursorHide();
+    }
+
+    void MouseCursorHide()
+    {
+        if (curserLock)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+           Cursor.lockState = CursorLockMode.None;
+           Cursor.visible = true;
+        }
     }
 }
