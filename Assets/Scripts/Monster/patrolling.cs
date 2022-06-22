@@ -48,7 +48,7 @@ public class patrolling : MonoBehaviour
         if (agent.remainingDistance < 0.5f)
             GotoNextPoint();
     
-        if(LightEvent.roomLightActive == true)
+        if(lightpoint.roomLightActive == true)
         {
             agent.SetDestination(lightpoint.transform.position);
         }
