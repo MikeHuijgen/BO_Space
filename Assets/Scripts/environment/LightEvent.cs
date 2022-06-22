@@ -7,20 +7,26 @@ public class LightEvent : MonoBehaviour
     [SerializeField] private int EventTime;
     [SerializeField] private GameObject terminal;
     [SerializeField] private Light roomLight;
-    [SerializeField] public bool roomLightActive;
-    [SerializeField] private bool terminalActive;
+    [SerializeField] private bool roomLightActive;
+    [SerializeField] private bool eventCanPlay;
+    [SerializeField] public bool monsterBool;
 
+    private void Start()
+    {
+        eventCanPlay = true;
+    }
     private void Update()
     {
         CheckTerminalActive();
     }
 
-    private void CheckTerminalActive()
+    public void CheckTerminalActive()
     {
-        terminalActive = terminal.GetComponent<Terminal>().active;
+        roomLightActive = terminal.GetComponent<Terminal>().eventBool;
 
-        if (terminalActive == true)
+        if (roomLightActive == true && eventCanPlay == true)
         {
+            monsterBool = true;
             Debug.Log("i");
             StartCoroutine(LightEventStart());
         }
@@ -31,6 +37,7 @@ public class LightEvent : MonoBehaviour
         roomLight.enabled = true;
         yield return new WaitForSeconds(EventTime);
         roomLight.enabled = false;
-
+        eventCanPlay = false;
+        monsterBool = false;
     }
 }

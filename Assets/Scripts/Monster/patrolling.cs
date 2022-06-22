@@ -11,6 +11,7 @@ public class patrolling : MonoBehaviour
     private GameObject door;
     public DoorScript doorScript;
     public LightEvent lightpoint;
+    public Transform lightEventTransform;
 
     
 
@@ -44,13 +45,17 @@ public class patrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
         if (agent.remainingDistance < 0.5f)
             GotoNextPoint();
-    
-        if(lightpoint.roomLightActive == true)
+        monsterEvent();
+        
+    }
+
+    void monsterEvent()
+    {
+        if (lightpoint.monsterBool == true)
         {
-            agent.SetDestination(lightpoint.transform.position);
+            agent.SetDestination(lightEventTransform.position);
         }
     }
 

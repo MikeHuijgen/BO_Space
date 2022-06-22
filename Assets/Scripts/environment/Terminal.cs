@@ -8,6 +8,8 @@ public class Terminal : MonoBehaviour
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject terminal;
     [SerializeField] private GameObject terminalLight;
+    public bool eventBool;
+    
     private Material terminalLightMat;
     private void Start()
     {
@@ -18,6 +20,7 @@ public class Terminal : MonoBehaviour
 
     public void Active(bool value)
     {
+        eventBool = value;
         active = value;
         terminalLightMat.SetColor("colormat", Color.green);
         terminalLight.GetComponent<Light>().color = Color.green;
@@ -32,5 +35,6 @@ public class Terminal : MonoBehaviour
             active = false;      
         }
     }
+
 
 }
