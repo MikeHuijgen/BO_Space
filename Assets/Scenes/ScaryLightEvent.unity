@@ -451,10 +451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab686e95c3d07c4e8bfc047aa19e81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventTime: 0
   terminal: {fileID: 1688122214}
-  terminalActive: 0
   roomLight: {fileID: 1836856251}
   roomLightActive: 0
+  terminalActive: 0
 --- !u!1 &1836856250
 GameObject:
   m_ObjectHideFlags: 0

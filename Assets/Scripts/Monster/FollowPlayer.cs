@@ -41,9 +41,6 @@ public class FollowPlayer : MonoBehaviour
         {
             agent.SetDestination(player.position);
         }
-        if (doorScript.monsterCanOpen == true)
-        {
-            patrolling.destPoint = (int)Mathf.Floor(Random.Range(0, 7)); }
         else
         {
             //Need to change with the waypoint path
