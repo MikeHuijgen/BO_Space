@@ -29,6 +29,10 @@ public class FollowPlayer : MonoBehaviour
     private void Update()
     {
         FollowPlayerPosition();
+        if (lightIsOn == true)
+        {
+            agent.SetDestination(player.position);
+        }
     }
 
     void FollowPlayerPosition()
