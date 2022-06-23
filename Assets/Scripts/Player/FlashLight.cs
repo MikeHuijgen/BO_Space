@@ -82,7 +82,7 @@ public class FlashLight : MonoBehaviour
         ray.origin = headLight.transform.position;
         ray.direction = headLight.transform.forward;
 
-        if (Physics.Raycast(ray, out hitInfo, 10))
+        if (Physics.Raycast(ray, out hitInfo, 3))
         {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1f);
             if (hitInfo.collider.tag == "Slime")

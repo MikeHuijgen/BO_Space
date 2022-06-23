@@ -57,7 +57,12 @@ public class patrolling : MonoBehaviour
     {
         if (lightpoint.monsterBool == true)
         {
+            agent.speed = 6f;
             agent.SetDestination(lightEventTransform.position);
+        }
+        else
+        {
+            agent.speed = 3.5f;
         }
      
     if (agent.remainingDistance < 0.5f)

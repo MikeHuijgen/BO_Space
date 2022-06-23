@@ -13,17 +13,8 @@ public class Interact : MonoBehaviour
     [SerializeField] private LayerMask Ibutton;
     private Ray ray;
     private RaycastHit hitInfo;
-
-    private GameObject door;
-    private DoorScript doorScript;
     
     [SerializeField] bool showText = true;
-
-    private void Start()
-    {
-        door = GameObject.FindWithTag("Door");
-        doorScript = door.GetComponent<DoorScript>();
-    }
 
     private void Update()
     {
@@ -35,7 +26,7 @@ public class Interact : MonoBehaviour
         ray.origin = cameraT.position;
         ray.direction = cameraT.forward;
 
-        if (Physics.Raycast(ray, out hitInfo, 10f, Ibutton))
+        if (Physics.Raycast(ray, out hitInfo, 2, Ibutton))
         {
             ShowInteractText();
 

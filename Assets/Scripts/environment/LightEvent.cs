@@ -6,7 +6,10 @@ public class LightEvent : MonoBehaviour
 {
     [SerializeField] private int EventTime;
     [SerializeField] private GameObject terminal;
-    [SerializeField] private Light roomLight;
+    [SerializeField] private Light roomLight1;
+    [SerializeField] private Light roomLight2;
+    [SerializeField] private Light roomLight3;
+    [SerializeField] private Light roomLight4;
     [SerializeField] private bool roomLightActive;
     [SerializeField] private bool eventCanPlay;
     [SerializeField] public bool monsterBool;
@@ -34,10 +37,22 @@ public class LightEvent : MonoBehaviour
 
     IEnumerator LightEventStart()
     {
-        roomLight.enabled = true;
+        SoundEffect();
+        roomLight1.enabled = true;
+        roomLight2.enabled = true;
+        roomLight3.enabled = true;
+        roomLight4.enabled = true;
         yield return new WaitForSeconds(EventTime);
-        roomLight.enabled = false;
+        roomLight1.enabled = false;
+        roomLight2.enabled = false;
+        roomLight3.enabled = false;
+        roomLight4.enabled = false;
         eventCanPlay = false;
         monsterBool = false;
+    }
+
+    void SoundEffect()
+    {
+        //hier komt het geluid
     }
 }
