@@ -7,7 +7,7 @@ public class DoorScript : MonoBehaviour
     [Header("Door Settings")]
     [SerializeField] private int closeDoorTime;
     [SerializeField] private float speed;
-    private Vector3 oldDoorPos;
+    public Vector3 oldDoorPos;
     private Vector3 maxHeightPos;
     
     [Header("Bool Settings")]
@@ -27,7 +27,7 @@ public class DoorScript : MonoBehaviour
     private Terminal terminalScript1;
     private Terminal terminalScript2;
 
-    private float doorY;
+    public float doorY;
 
 
     private void Start()
@@ -68,7 +68,7 @@ public class DoorScript : MonoBehaviour
     {
         if (isOpening == true)
         {
-            door.transform.Translate(0,.1f * speed * Time.deltaTime,0);
+            door.transform.Translate(0,0, .1f * speed * Time.deltaTime);
         }
 
         if (doorY > maxHeightTransform.position.y)
@@ -80,7 +80,7 @@ public class DoorScript : MonoBehaviour
 
         if (isClosing == true)
         {
-            door.transform.Translate(0, -.1f * speed * Time.deltaTime, 0);
+            door.transform.Translate(0, 0, -.1f * speed * Time.deltaTime);
         }
 
         if (doorY < oldDoorPos.y)

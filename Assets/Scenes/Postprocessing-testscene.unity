@@ -17450,6 +17450,7 @@ MonoBehaviour:
   agent: {fileID: 2015574594}
   doorScript: {fileID: 1448214846}
   lightpoint: {fileID: 0}
+  lightEventTransform: {fileID: 0}
 --- !u!195 &2015574594
 NavMeshAgent:
   m_ObjectHideFlags: 0
