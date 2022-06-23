@@ -1,8 +1,20 @@
 fileFormatVersion: 2
-guid: eaff6895b81da3248a866af0adb1e27a
+guid: 2088f2180893c734792d798103ea3894
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 524207070714502161
+    second: hosp_bed|idle
+  - first:
+      74: -3414129940052651983
+    second: hosp_bed|switch
+  - first:
+      74: 9163257287205964719
+    second: Armature.001|idle
+  - first:
+      74: -7222896317766563659
+    second: Armature.001|switch
   externalObjects: {}
   materials:
     materialImportMode: 2
