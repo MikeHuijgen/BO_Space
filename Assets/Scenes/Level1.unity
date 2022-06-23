@@ -226,8 +226,8 @@ MonoBehaviour:
   active: 0
   door: {fileID: 1510828157}
   terminal: {fileID: 0}
-  terminalLight1: {fileID: 0}
-  terminalLight2: {fileID: 1398255105}
+  terminalLight1: {fileID: 1398255105}
+  terminalLight2: {fileID: 1958524388}
   eventBool: 0
 --- !u!65 &116143385
 BoxCollider:
@@ -1781,6 +1781,11 @@ Transform:
   m_Father: {fileID: 8870720062789004125}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1958524388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3909009059816606870, guid: fee5368fbbb88f147a286368a8a3ea7b, type: 3}
+  m_PrefabInstance: {fileID: 1691136221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2021476469
 PrefabInstance:
   m_ObjectHideFlags: 0
