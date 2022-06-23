@@ -390,7 +390,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDied: 0
+  mouselook: {fileID: 0}
   deathScreen: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerCamera: {fileID: 0}
+  menuCamera: {fileID: 0}
 --- !u!1 &1289673514
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,8 +987,8 @@ RectTransform:
   m_Children:
   - {fileID: 1403231637}
   - {fileID: 1841907779}
-  - {fileID: 1920152182}
   - {fileID: 1703154611}
+  - {fileID: 1920152182}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1005,7 +1009,6 @@ GameObject:
   - component: {fileID: 1703154615}
   - component: {fileID: 1703154614}
   - component: {fileID: 1703154613}
-  - component: {fileID: 1703154612}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1026,25 +1029,13 @@ RectTransform:
   m_Children:
   - {fileID: 585461366}
   m_Father: {fileID: 1640507275}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.2201e-10, y: -75}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 305.4048, y: 61.2221}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1703154612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703154610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4241c7dc6051ee94da6142248a54bec2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1703154613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,19 +1079,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1703154614}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1703154612}
-        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: OnClickPlay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1703154614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,7 +1363,7 @@ RectTransform:
   m_Children:
   - {fileID: 1599981477}
   m_Father: {fileID: 1640507275}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
