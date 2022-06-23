@@ -36,7 +36,7 @@ public class patrolling : MonoBehaviour
             return;
         else
         {
-            destPoint = (int)Mathf.Floor(Random.Range(0, 5));
+            destPoint = (int)Mathf.Floor(Random.Range(0, 6));
         }
 
         agent.destination = points[destPoint].position;
