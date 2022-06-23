@@ -3,7 +3,22 @@ guid: e0a5635f0e88047489f045ae91e111b8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Basicwall
+    second: {fileID: -2146468545653281756, guid: d1b34c0edacda8f488d66f17dadd1da4, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character
+    second: {fileID: -5209150659612451695, guid: e0a5635f0e88047489f045ae91e111b8, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalwall02
+    second: {fileID: 7490241670368992192, guid: d1b34c0edacda8f488d66f17dadd1da4, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
