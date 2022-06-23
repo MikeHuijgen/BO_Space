@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33855138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.56, y: 0, z: 3.59}
+  m_LocalPosition: {x: 0, y: 0, z: 1.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1836856252}
@@ -618,6 +618,7 @@ MonoBehaviour:
   agent: {fileID: 680361403}
   doorScript: {fileID: 175241629}
   lightpoint: {fileID: 1688122216}
+  lightEventTransform: {fileID: 33855139}
 --- !u!65 &680361406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -921,7 +922,8 @@ MonoBehaviour:
   terminal: {fileID: 1688122214}
   roomLight: {fileID: 1836856251}
   roomLightActive: 0
-  terminalActive: 0
+  eventCanPlay: 1
+  monsterBool: 0
 --- !u!1 &1818678839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8050115281583100884, guid: 2020f4fd0fc3c2f46a25369ff58a734c, type: 3}
@@ -1014,7 +1016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836856250}
   m_LocalRotation: {x: 0.70571536, y: 0.044337977, z: -0.044337977, w: 0.70571536}
-  m_LocalPosition: {x: 0, y: 3.49, z: 2.83}
+  m_LocalPosition: {x: 0, y: 3.16, z: 1.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 33855139}
