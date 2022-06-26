@@ -343,6 +343,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213463675, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 213463675, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca6badd95f40c1042b2e33b08ca05343, type: 3}
     - target: {fileID: 559425838, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
       propertyPath: playerUI
       value: 
@@ -355,6 +363,30 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1198516493}
+    - target: {fileID: 1220996719, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220996719, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca6badd95f40c1042b2e33b08ca05343, type: 3}
+    - target: {fileID: 1366501704, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366501704, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 59aa65387d73d4d4aac0a46bfb2c3f8c, type: 3}
+    - target: {fileID: 1946194596, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946194596, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: be72f5a44452cb34e88a8411fb1a361c, type: 3}
     - target: {fileID: 307718363946116486, guid: 706495e95ad5ab945af5da0f57d80b4e, type: 3}
       propertyPath: m_Name
       value: Menus
