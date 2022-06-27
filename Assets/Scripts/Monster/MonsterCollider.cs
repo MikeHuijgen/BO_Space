@@ -5,11 +5,11 @@ using UnityEngine;
 public class MonsterCollider : MonoBehaviour
 {
     [SerializeField] FlashLight flashLight;
-    private Collider monsterCollider;
+    private BoxCollider monsterCollider;
 
     void Start()
     {
-        monsterCollider = GetComponent<Collider>();
+        monsterCollider = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame

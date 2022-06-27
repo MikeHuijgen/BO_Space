@@ -8,7 +8,7 @@ public class PauzeScript : MonoBehaviour
     [SerializeField] Canvas pauzeScreen;
     [SerializeField] private Canvas playerUI;
     [SerializeField] private MouseLook mouseLook;
-    [SerializeField] private Camera playerCamera;
+    [SerializeField] private PlayerDeath playerDeath;
 
     private void Start()
     {
@@ -22,21 +22,24 @@ public class PauzeScript : MonoBehaviour
 
     void ActivePauzeScreen()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (playerDeath.playerDied == false)
         {
-            pauzeScreen.enabled = !pauzeScreen.enabled;
-        }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pauzeScreen.enabled = !pauzeScreen.enabled;
+            }
 
-        if (pauzeScreen.enabled)
-        {
-            playerUI.enabled = false;
-            Time.timeScale = 0;
-            mouseLook.curserLock = false;
-        }
-        else
-        {
-            playerUI.enabled = true;
-            Time.timeScale = 1;
+            if (pauzeScreen.enabled)
+            {
+                playerUI.enabled = false;
+                Time.timeScale = 0;
+                mouseLook.curserLock = false;
+            }
+            else
+            {
+                playerUI.enabled = true;
+                Time.timeScale = 1;
+            }
         }
     }
 

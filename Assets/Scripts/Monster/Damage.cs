@@ -15,18 +15,18 @@ public class Damage : MonoBehaviour
         playerDeath = player.GetComponent<PlayerDeath>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        targetDis = Vector3.Distance(player.transform.position, transform.position);
-        KillPlayer();
+        if (collision.gameObject.tag == "Player")
+        {
+            KillPlayer();
+            Debug.Log("Hit");
+        }
     }
+
 
     void KillPlayer()
     {
-        if (targetDis <= monsterAI.stoppingDistance)
-        {
-            playerDeath.CheckForPlayerDead(true);
-        }
+        playerDeath.CheckForPlayerDead(true);
     }
 }

@@ -9,9 +9,11 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private MouseLook mouselook;
     [SerializeField] private Canvas deathScreen;
     [SerializeField] private Canvas playerUI;
-    [SerializeField] private Camera playerCamera;
-    [SerializeField] private Camera menuCamera;
 
+    private void Start()
+    {
+        deathScreen.enabled = false;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -21,11 +23,10 @@ public class PlayerDeath : MonoBehaviour
     }
     void PlayerDies()
     {
-        mouselook.curserLock = false;
+        playerDied = true;
         Time.timeScale = 0;
+        mouselook.curserLock = false;
         playerUI.enabled = false;
-        menuCamera.enabled = true;
-        playerCamera.enabled = false;
         deathScreen.enabled = true;
     }
 
