@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -13,33 +14,26 @@ public class PlayerDeath : MonoBehaviour
 
     private void Update()
     {
-        PlayerDies();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerDies();
+        }
     }
-
     void PlayerDies()
     {
-        // need to change if the monster hits you then you die
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            playerDied = true;
-        }
-
-        if (playerDied)
-        {
-            mouselook.curserLock = false;
-            Time.timeScale = 0;
-            playerUI.enabled = false;
-            menuCamera.enabled = true;
-            playerCamera.enabled = false;
-            deathScreen.enabled = true;
-        }
+        mouselook.curserLock = false;
+        Time.timeScale = 0;
+        playerUI.enabled = false;
+        menuCamera.enabled = true;
+        playerCamera.enabled = false;
+        deathScreen.enabled = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void CheckForPlayerDead(bool value)
     {
-        if (collision.gameObject.CompareTag("monster"))
+        if (value)
         {
-            playerDied = true;
+            PlayerDies();
         }
     }
 }

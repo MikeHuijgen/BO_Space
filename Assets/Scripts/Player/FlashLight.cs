@@ -43,7 +43,7 @@ public class FlashLight : MonoBehaviour
     void TurnOn_OffLight()
     {
         // It turn the flashlight on and off and play a sound effect
-        if (Input.GetKeyUp(KeyCode.G))
+        if (Input.GetKeyUp(KeyCode.F))
         {
             audioSource.PlayOneShot(turnOnSound);
             headLight.enabled = !headLight.enabled;

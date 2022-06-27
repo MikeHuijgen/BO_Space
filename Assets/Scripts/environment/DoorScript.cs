@@ -15,6 +15,7 @@ public class DoorScript : MonoBehaviour
     [SerializeField] private bool activeTerminal1 = false;
     [SerializeField] private bool activeTerminal2 = false;
     public bool isClosing;
+    public bool doorActive = false;
 
     [Header("References")]
     [SerializeField] private Transform beginPos;
@@ -59,6 +60,7 @@ public class DoorScript : MonoBehaviour
 
         if (activeTerminal1 == true && activeTerminal2 == true)
         {
+            doorActive = true;
             StartCoroutine(SetTerminalsFalse());
             doorTrigger.enabled = true;
         }
