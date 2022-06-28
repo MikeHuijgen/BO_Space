@@ -46,6 +46,7 @@ public class DoorScript : MonoBehaviour
         doorY = door.transform.position.y;
         OpenDoor();
         CheckIfCanOpen();
+        CloseDoor();
     }
 
     public void TriggerActive(bool value)
@@ -77,9 +78,11 @@ public class DoorScript : MonoBehaviour
         {
             isOpening = false;
             door.transform.Translate(0,0,0);
-            StartCoroutine(StopAndCloseDoor());
         }
+    }
 
+    void CloseDoor()
+    {
         if (isClosing == true)
         {
             door.transform.Translate(0, 0, -.1f * speed * Time.deltaTime);
@@ -90,14 +93,6 @@ public class DoorScript : MonoBehaviour
             isClosing = false;
             door.transform.position = oldDoorPos;
         }
-
-
-    }
-
-    IEnumerator StopAndCloseDoor()
-    {
-        yield return new WaitForSeconds(closeDoorTime);
-        isClosing = true;
     }
 
     IEnumerator SetTerminalsFalse()

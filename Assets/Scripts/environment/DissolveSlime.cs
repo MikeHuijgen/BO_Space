@@ -6,15 +6,21 @@ public class DissolveSlime : MonoBehaviour
 {
     [SerializeField] private float dissolveSpeed;
     [SerializeField] private ParticleSystem smokePartical;
+    [SerializeField] private AudioClip burnSound;
+    [SerializeField] private AudioClip slimeSound;
 
     private Material dissolveShader;
     private float maxLifetime;
     private bool dissolve = false;
+    AudioSource audioSource;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         dissolveShader = GetComponent<Renderer>().material;
         maxLifetime = 1f;
+        audioSource.clip = slimeSound;
+        audioSource.Play();
     }
 
     private void Update()
@@ -27,6 +33,9 @@ public class DissolveSlime : MonoBehaviour
     {
         if (gotHit == true)
         {
+            audioSource.Stop();
+            audioSource.clip = burnSound;
+            audioSource.Play();
             smokePartical.Play();
             dissolve = true;
         }
@@ -47,6 +56,7 @@ public class DissolveSlime : MonoBehaviour
     {
         if (maxLifetime < 0f)
         {
+            audioSource.Stop();
             smokePartical.Stop();
             Destroy(gameObject);
         }

@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float moveX;
-    float moveZ;
+    public float moveX;
+    public float moveZ;
+    AudioSource audioSource;
+    public bool playAudio;
 
     public float speed = 5f;
-   
+
+    private void Start()
+    {
+        playAudio = true;
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        FootStepsSound();
+        moveX = Input.GetAxis("Horizontal");
+        moveZ = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = transform.right * moveX + transform.forward * moveZ;
         
-        transform.Translate(Vector3.right * x * speed * Time.deltaTime);
-        transform.Translate(Vector3.forward * z * speed * Time.deltaTime);
+        transform.Translate(Vector3.right * moveX * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * moveZ * speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -29,5 +37,22 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 5f;
         }
+    }
+
+    void FootStepsSound()
+    {
+        if ((moveZ > 0 || moveX > 0 || moveX < 0 || moveZ < 0) && playAudio)
+        {
+            audioSource.Play();
+            playAudio = false;
+        }
+
+
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+        {
+            playAudio = true;
+            audioSource.Stop();
+        }
+
     }
 }
