@@ -9,6 +9,7 @@ public class PauzeScript : MonoBehaviour
     [SerializeField] private Canvas playerUI;
     [SerializeField] private MouseLook mouseLook;
     [SerializeField] private PlayerDeath playerDeath;
+    [SerializeField] private Ecsape Ecsape;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class PauzeScript : MonoBehaviour
 
     void ActivePauzeScreen()
     {
-        if (playerDeath.playerDied == false)
+        if (playerDeath.playerDied == false && Ecsape.hasEscaped == false)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {

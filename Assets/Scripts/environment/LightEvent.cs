@@ -13,6 +13,9 @@ public class LightEvent : MonoBehaviour
     [SerializeField] private bool roomLightActive;
     [SerializeField] private bool eventCanPlay;
     [SerializeField] public bool monsterBool;
+    [SerializeField] private AudioSource audioSourceBackground;
+    [SerializeField] private AudioClip eventClip;
+    [SerializeField] private AudioClip backGroundSound;
 
     private void Start()
     {
@@ -29,15 +32,14 @@ public class LightEvent : MonoBehaviour
 
         if (roomLightActive == true && eventCanPlay == true)
         {
+            PlaySound();
             monsterBool = true;
-            Debug.Log("i");
             StartCoroutine(LightEventStart());
         }
     }
 
     IEnumerator LightEventStart()
     {
-        SoundEffect();
         roomLight1.enabled = true;
         roomLight2.enabled = true;
         roomLight3.enabled = true;
@@ -49,10 +51,11 @@ public class LightEvent : MonoBehaviour
         roomLight4.enabled = false;
         eventCanPlay = false;
         monsterBool = false;
+        audioSourceBackground.clip = backGroundSound;
     }
 
-    void SoundEffect()
+    void PlaySound()
     {
-        //hier komt het geluid
+        audioSourceBackground.clip = eventClip;
     }
 }

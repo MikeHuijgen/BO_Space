@@ -15,7 +15,7 @@ public class Damage : MonoBehaviour
         playerDeath = player.GetComponent<PlayerDeath>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {

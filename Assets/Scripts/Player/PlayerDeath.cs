@@ -14,13 +14,7 @@ public class PlayerDeath : MonoBehaviour
     {
         deathScreen.enabled = false;
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PlayerDies();
-        }
-    }
+
     void PlayerDies()
     {
         playerDied = true;
