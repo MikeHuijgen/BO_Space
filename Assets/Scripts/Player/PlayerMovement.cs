@@ -28,15 +28,6 @@ public class PlayerMovement : MonoBehaviour
         
         transform.Translate(Vector3.right * moveX * speed * Time.deltaTime);
         transform.Translate(Vector3.forward * moveZ * speed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            speed = 10f;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            speed = 5f;
-        }
     }
 
     void FootStepsSound()
