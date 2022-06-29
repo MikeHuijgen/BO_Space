@@ -10,6 +10,7 @@ public class FollowPlayer : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform player;
     [SerializeField] private GameObject flashLight;
+    Animator animator;
     
     
     public patrolling patrolling;
@@ -45,6 +46,9 @@ public class FollowPlayer : MonoBehaviour
 
         if (lightIsOn == true)
         {
+            animator.SetBool("isRunning", true);
+            animator.SetBool("isIdle", false);
+            animator.SetBool("isWalking", false);
             chasing = true;
             agent.SetDestination(player.position);
             animator.SetBool("isChasing", true);
@@ -58,6 +62,8 @@ public class FollowPlayer : MonoBehaviour
 
     public IEnumerator Freeze()
     {
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isIdle", true);
         chasing = false;
         agent.isStopped = true;
         Debug.Log("Im waiting 1 second");

@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Damage : MonoBehaviour
 {
-    private float targetDis = Mathf.Infinity;
     [SerializeField] private NavMeshAgent monsterAI;
     [SerializeField] private GameObject player;
     private PlayerDeath playerDeath;

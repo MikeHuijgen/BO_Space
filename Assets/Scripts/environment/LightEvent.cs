@@ -17,6 +17,8 @@ public class LightEvent : MonoBehaviour
     [SerializeField] private AudioClip eventClip;
     [SerializeField] private AudioClip backGroundSound;
 
+    [SerializeField] Animator monsterAnimator;
+
     private void Start()
     {
         eventCanPlay = true;
@@ -32,6 +34,8 @@ public class LightEvent : MonoBehaviour
 
         if (roomLightActive == true && eventCanPlay == true)
         {
+            monsterAnimator.SetBool("isRunning", true);
+            monsterAnimator.SetBool("isWalking", false);
             PlaySound();
             monsterBool = true;
             StartCoroutine(LightEventStart());
@@ -45,6 +49,8 @@ public class LightEvent : MonoBehaviour
         roomLight3.enabled = true;
         roomLight4.enabled = true;
         yield return new WaitForSeconds(EventTime);
+        monsterAnimator.SetBool("isRunning", false);
+        monsterAnimator.SetBool("isWalking", true);
         roomLight1.enabled = false;
         roomLight2.enabled = false;
         roomLight3.enabled = false;
