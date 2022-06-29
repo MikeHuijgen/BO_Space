@@ -50,7 +50,6 @@ public class FollowPlayer : MonoBehaviour
             animator.SetBool("isWalking", false);
             chasing = true;
             agent.SetDestination(player.position);
-            animator.SetBool("isChasing", true);
 
         }
         else if(lightIsOn == false && chasing == true)
