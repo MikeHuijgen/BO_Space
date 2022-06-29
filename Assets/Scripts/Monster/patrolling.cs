@@ -13,7 +13,7 @@ public class patrolling : MonoBehaviour
     public LightEvent lightpoint;
     public Transform lightEventTransform;
 
-    
+    internal Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class patrolling : MonoBehaviour
         //doorScript.GetComponent<DoorScript>();
         //doorScript = FindObjectOfType<DoorScript>();
 
-
+        animator = GetComponent<Animator>();
 
 
     }
@@ -37,6 +37,7 @@ public class patrolling : MonoBehaviour
         else
         {
             destPoint = (int)Mathf.Floor(Random.Range(0, 6));
+            animator.SetBool("isChasing", false);
         }
 
         agent.destination = points[destPoint].position;

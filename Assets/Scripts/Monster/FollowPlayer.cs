@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
+    internal Animator animator;
+
     [Header("References")]
     [SerializeField] private Transform player;
     [SerializeField] private GameObject flashLight;
@@ -23,7 +25,7 @@ public class FollowPlayer : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -32,6 +34,7 @@ public class FollowPlayer : MonoBehaviour
         if (lightIsOn == true)
         {
             agent.SetDestination(player.position);
+            
         }
     }
 
@@ -44,6 +47,8 @@ public class FollowPlayer : MonoBehaviour
         {
             chasing = true;
             agent.SetDestination(player.position);
+            animator.SetBool("isChasing", true);
+
         }
         else if(lightIsOn == false && chasing == true)
         {
