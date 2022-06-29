@@ -10,7 +10,7 @@ public class DissolveSlime : MonoBehaviour
     [SerializeField] private AudioClip slimeSound;
 
     private Material dissolveShader;
-    private float maxLifetime;
+    [SerializeField] private float maxLifetime;
     private bool dissolve = false;
     AudioSource audioSource;
 

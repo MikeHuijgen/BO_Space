@@ -8,7 +8,6 @@ public class CheckForMonster : MonoBehaviour
     [SerializeField] private GameObject flashLight;
 
     private FlashLight flashLightScript;
-    private bool canTurnOn;
 
     private void Start()
     {

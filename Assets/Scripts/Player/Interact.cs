@@ -7,7 +7,7 @@ public class Interact : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform cameraT;
-    [SerializeField] private TMP_Text interactText;
+    [SerializeField] private GameObject interactPanel;
 
     [Header("LayerMasks")]
     [SerializeField] private LayerMask Ibutton;
@@ -28,9 +28,7 @@ public class Interact : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo, 2, Ibutton))
         {
-            ShowInteractText();
-
-            interactText.text = $"Press E to press the button";
+            interactPanel.SetActive(true);
 
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1f);
 
@@ -41,7 +39,7 @@ public class Interact : MonoBehaviour
         }
         else
         {
-            interactText.enabled = false;
+            interactPanel.SetActive(false);
         }
     }
 
@@ -49,30 +47,5 @@ public class Interact : MonoBehaviour
     {
         Terminal terminal = hitInfo.transform.GetComponent<Terminal>();
         terminal.Active(true);
-    }
-
-    public void CheckSeeInteractText(bool value)
-    {
-        if (value)
-        {
-            showText = true;
-        }
-
-        if (!value)
-        {
-           showText = false;
-        }
-    }
-
-    void ShowInteractText()
-    {
-        if (showText)
-        {
-            interactText.enabled = true;
-        }
-        else
-        {
-            interactText.enabled = false;
-        }
     }
 }

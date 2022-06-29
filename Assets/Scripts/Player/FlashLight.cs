@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlashLight : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class FlashLight : MonoBehaviour
    
     [Header("References")]
     [SerializeField] private Light headLight;
+    [SerializeField] private GameObject tipPanel;
 
     [Header("Sound")]
     [SerializeField] private AudioClip turnOnSound;
@@ -29,6 +31,7 @@ public class FlashLight : MonoBehaviour
 
     private void Start()
     {
+        tipPanel.SetActive(true);
         headLight.intensity = intensityLight;
         audioSource = GetComponent<AudioSource>();
     }
@@ -45,6 +48,7 @@ public class FlashLight : MonoBehaviour
         // It turn the flashlight on and off and play a sound effect
         if (Input.GetKeyUp(KeyCode.F))
         {
+            tipPanel.SetActive(false);
             audioSource.PlayOneShot(turnOnSound);
             headLight.enabled = !headLight.enabled;
         }
