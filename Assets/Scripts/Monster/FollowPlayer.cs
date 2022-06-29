@@ -5,12 +5,11 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
-    internal Animator animator;
 
     [Header("References")]
     [SerializeField] private Transform player;
     [SerializeField] private GameObject flashLight;
-    Animator animator;
+    private Animator animator;
     
     
     public patrolling patrolling;
