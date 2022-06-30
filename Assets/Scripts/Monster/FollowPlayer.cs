@@ -46,7 +46,6 @@ public class FollowPlayer : MonoBehaviour
         if (lightIsOn == true)
         {
             animator.SetBool("isRunning", true);
-            animator.SetBool("isIdle", false);
             animator.SetBool("isWalking", false);
             chasing = true;
             agent.SetDestination(player.position);
@@ -61,7 +60,7 @@ public class FollowPlayer : MonoBehaviour
     public IEnumerator Freeze()
     {
         animator.SetBool("isRunning", false);
-        animator.SetBool("isIdle", true);
+        animator.SetBool("isWalking", true);
         chasing = false;
         agent.isStopped = true;
         Debug.Log("Im waiting 1 second");

@@ -37,7 +37,6 @@ public class patrolling : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", true);
-            animator.SetBool("isIdle", false);
             animator.SetBool("isRunning", false);
             destPoint = (int)Mathf.Floor(Random.Range(0, 6));
         }
