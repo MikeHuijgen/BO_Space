@@ -9,16 +9,24 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private MouseLook mouselook;
     [SerializeField] private Canvas deathScreen;
     [SerializeField] private Canvas playerUI;
+    [SerializeField] private CamShake camShake;
+    private AudioSource audioSource;
+    [SerializeField] AudioClip deathSound;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         deathScreen.enabled = false;
     }
 
     void PlayerDies()
     {
+        audioSource.clip = deathSound;
+        audioSource.loop = false;
+        audioSource.volume = 1;
+        audioSource.Play();
+        StartCoroutine(camShake.Shake());
         playerDied = true;
-        Time.timeScale = 0;
         mouselook.curserLock = false;
         playerUI.enabled = false;
         deathScreen.enabled = true;

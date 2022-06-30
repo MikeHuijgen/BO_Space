@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private AudioClip footSteps;
+    [SerializeField] private PlayerDeath playerDeath;
     public float moveX;
     public float moveZ;
     AudioSource audioSource;
@@ -32,18 +34,21 @@ public class PlayerMovement : MonoBehaviour
 
     void FootStepsSound()
     {
-        if ((moveZ > 0 || moveX > 0 || moveX < 0 || moveZ < 0) && playAudio)
+        if (!playerDeath.playerDied)
         {
-            audioSource.Play();
-            playAudio = false;
+            if ((moveZ > 0 || moveX > 0 || moveX < 0 || moveZ < 0) && playAudio)
+            {
+                audioSource.clip = footSteps;
+                audioSource.Play();
+                playAudio = false;
+            }
+
+
+            if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+            {
+                playAudio = true;
+                audioSource.Stop();
+            }
         }
-
-
-        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
-        {
-            playAudio = true;
-            audioSource.Stop();
-        }
-
     }
 }
