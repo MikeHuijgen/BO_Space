@@ -31,9 +31,9 @@ public class CamShake : MonoBehaviour
             yield return null;
         }
 
-        transform.localPosition = startPos;
-        Time.timeScale = 0;
         audioSource.clip = monsterEating;
         audioSource.Play();
+        transform.localPosition = startPos;
+        Time.timeScale = 0;
     }
 }
