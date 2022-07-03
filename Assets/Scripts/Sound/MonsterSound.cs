@@ -40,7 +40,7 @@ public class MonsterSound : MonoBehaviour
 
     IEnumerator SoundTimer()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(2);
         canPlaySound = true;
     }
 
