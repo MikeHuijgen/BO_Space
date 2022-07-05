@@ -21,6 +21,7 @@ public class MainButtons : MonoBehaviour
 
     public void OnClickPQuit()
     {
+        Application.Quit();
         Debug.Log("Quit");
     }
 }
